@@ -15,7 +15,7 @@ public class Usuario {
 private long id; 
 
 private String nome;
-@Column
+@Column(Unique = true) 
 
 	
 	

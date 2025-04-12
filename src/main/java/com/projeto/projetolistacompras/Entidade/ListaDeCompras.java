@@ -25,7 +25,50 @@ private String nomeLista;
 private Usuario usuario; 
 
 @ElementCollection 
-private List<String>itens; 
+private List<String>itens;
+
+
+
+//Getters / Setters
+
+
+public long getId() {
+	return id;
+}
+
+public void setId(long id) {
+	this.id = id;
+}
+
+public String getNomeLista() {
+	return nomeLista;
+}
+
+public void setNomeLista(String nomeLista) {
+	this.nomeLista = nomeLista;
+}
+
+public Usuario getUsuario() {
+	return usuario;
+}
+
+public void setUsuario(Usuario usuario) {
+	this.usuario = usuario;
+}
+
+public List<String> getItens() {
+	return itens;
+}
+
+public void setItens(List<String> itens) {
+	this.itens = itens;
+} 
+
+
+
+
+
+
 
 	
 	

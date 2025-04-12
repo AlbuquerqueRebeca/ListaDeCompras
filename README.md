@@ -1,4 +1,5 @@
-### Gerenciamento de Listas de Compras 📝🛍️🛒
+
+## Gerenciamento de Listas de Compras 📝🛍️🛒
 
 -----------------------------------------------
 
@@ -26,8 +27,8 @@ Todas as informações são armazenadas na nuvem, garantindo acessibilidade e se
 
 
 ----------------------------------------------------------------------------
-
-### Projeto em desenvolvimento 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
+<div align="center">
+Projeto em desenvolvimento 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 
 
 

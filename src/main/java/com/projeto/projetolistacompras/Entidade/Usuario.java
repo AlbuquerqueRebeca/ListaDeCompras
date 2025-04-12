@@ -1,5 +1,8 @@
 package com.projeto.projetolistacompras.Entidade;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +24,8 @@ private String email;
 private String senha; 
 
 
-@OneToMany(mappedBy = "usuario", cascade =  CascadeType.All, orphanRemoval = true )
+@OneToMany(mappedBy = "usuario", cascade =  CascadeType.ALL, orphanRemoval = true )
+private List<ListaDeCompras>listaDeCompras;
 
 
 	

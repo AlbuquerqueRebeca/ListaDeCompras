@@ -21,7 +21,8 @@ private String email;
 private String senha; 
 
 
-@OneToMany
+@OneToMany(mappedBy = "usuario", cascade =  CascadeType.All, orphanRemoval = true )
+
 
 	
 	

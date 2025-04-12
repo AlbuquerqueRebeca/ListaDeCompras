@@ -25,7 +25,7 @@ Todas as informações são armazenadas na nuvem, garantindo acessibilidade e se
 
 
 
-
+----------------------------------------------------------------------------
 
 ### Projeto em desenvolvimento 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 

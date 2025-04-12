@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 public class ListaDeCompras {
 	
 @Id
-@GeneratedValue()
+@GeneratedValue(strategy = GenerationType.IDENTITY) 
 
 	
 	

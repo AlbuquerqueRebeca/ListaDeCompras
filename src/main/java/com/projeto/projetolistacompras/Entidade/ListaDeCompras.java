@@ -19,6 +19,7 @@ private String nomeLista;
 
 @ManyToOne
 @JoinColumn(name = "usuario_id") 
+private Usuario usuario; 
 
 	
 	

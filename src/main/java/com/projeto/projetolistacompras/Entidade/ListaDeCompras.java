@@ -1,5 +1,7 @@
 package com.projeto.projetolistacompras.Entidade;
 
+import java.util.List;
+
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +25,7 @@ private String nomeLista;
 private Usuario usuario; 
 
 @ElementCollection 
+private List<String>itens; 
 
 	
 	

@@ -29,6 +29,11 @@ private List<ListaDeCompras>listaDeCompras;
 
 
 public Usuario() { 
+}
+	public Usuario(String nome, String email, String senha) { 
+		
+	}
+
 
 
 

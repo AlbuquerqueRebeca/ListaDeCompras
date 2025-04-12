@@ -18,7 +18,7 @@ private long id;
 private String nomeLista; 
 
 @ManyToOne
-@JoinColumn
+@JoinColumn(name = "usuario_id") 
 
 	
 	

@@ -28,6 +28,10 @@ private String senha;
 private List<ListaDeCompras>listaDeCompras;
 
 
+public Usuario() { 
+
+
+
 	
 	
 

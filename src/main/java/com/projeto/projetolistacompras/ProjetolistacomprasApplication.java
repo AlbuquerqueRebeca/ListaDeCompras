@@ -1,3 +1,4 @@
+
 package com.projeto.projetolistacompras;
 
 import org.springframework.boot.SpringApplication;

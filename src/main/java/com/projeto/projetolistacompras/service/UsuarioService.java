@@ -21,7 +21,7 @@ public class UsuarioService{
 	}
 	
 	
-	public Optional<Usuario> 
+	public Optional<Usuario> buscarPorId 
 	 
 	
 }

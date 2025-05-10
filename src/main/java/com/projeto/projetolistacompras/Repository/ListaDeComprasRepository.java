@@ -1,8 +1,9 @@
 package com.projeto.projetolistacompras.Repository;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface ListaDeComprasRepository {
+import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
+
+public interface ListaDeComprasRepository extends JpaRepository<>{  
 
 }

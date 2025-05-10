@@ -14,6 +14,7 @@ public class UsuarioService{
 	
 	public UsuarioService(UsuarioRepository usuarioRepository) { 
 		this.usuarioRepository = usuarioRepository;  
+		this.passwordEncoder = passwordEncoder; 
 		
 	}
 	 

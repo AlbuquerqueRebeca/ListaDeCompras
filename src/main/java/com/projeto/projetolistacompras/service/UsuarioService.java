@@ -21,7 +21,9 @@ public class UsuarioService{
 		
 	}
 	
-	public usuario criarUsuario
+	public Usuario criarUsuario(Usuario usuario) {
+		
+	}
 	
 	
 	public Optional<Usuario> buscarPorId(Long id){

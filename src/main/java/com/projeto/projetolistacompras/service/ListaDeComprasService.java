@@ -10,5 +10,12 @@ public class ListaDeComprasService {
 	
 	private final ListaDeComprasRepository listaDeComprasRepository; 
 	private final UsuarioRepository usuarioRepository; 
+	
+	
+	
+	public ListaDeComprasService()
+	
+	
+	
 
 }

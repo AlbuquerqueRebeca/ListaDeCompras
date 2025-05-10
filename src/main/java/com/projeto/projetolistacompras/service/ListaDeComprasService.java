@@ -13,7 +13,9 @@ public class ListaDeComprasService {
 	
 	
 	
-	public ListaDeComprasService()
+	public ListaDeComprasService(ListaDeComprasRepository listaDeComprasRepository, UsuarioRepository usuarioRepository ) {
+		
+	}
 	
 	
 	

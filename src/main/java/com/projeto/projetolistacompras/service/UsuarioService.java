@@ -27,6 +27,7 @@ public class UsuarioService{
 	}
 	
 	public boolean validarSenha(String senhaDigitada, String senhaArmazenada) {
+		return passwordEncoder.matches()
 		
 	}
 	

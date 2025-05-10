@@ -1,4 +1,4 @@
-package com.projeto.projetolistacompras.Service;
+package com.projeto.projetolistacompras.service;
 
 import org.springframework.stereotype.Service;
 
@@ -10,6 +10,11 @@ public class UsuarioService{
 	private final UsuarioRepository usuarioRepository; 
 	
 	private final BCryptPasswordEncoder passwordEncoder; 
+	
+	
+	public UsuarioService(UsuarioRepository usuarioRepository) { 
+		
+	}
 	 
 	
 }

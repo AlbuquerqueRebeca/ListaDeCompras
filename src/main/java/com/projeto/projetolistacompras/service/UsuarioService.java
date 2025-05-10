@@ -22,6 +22,7 @@ public class UsuarioService{
 	}
 	
 	public Usuario criarUsuario(Usuario usuario) {
+		return usuarioRepository.save(usuario);
 		
 	}
 	

@@ -35,7 +35,9 @@ public class UsuarioService{
 		
 	}
 	
-	public void excluirUsuario()
+	public void excluirUsuario(Long id) { 
+		
+	}
 	
 	
 	

@@ -1,5 +1,7 @@
 package com.projeto.projetolistacompras.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
@@ -17,6 +19,9 @@ public class UsuarioService{
 		this.passwordEncoder = passwordEncoder; 
 		
 	}
+	
+	
+	public Optional<Usuario> 
 	 
 	
 }

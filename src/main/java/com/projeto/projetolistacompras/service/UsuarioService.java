@@ -21,7 +21,9 @@ public class UsuarioService{
 	}
 	
 	
-	public Optional<Usuario> buscarPorId 
+	public Optional<Usuario> buscarPorId(Long id){
+		
+	}
 	 
 	
 }

@@ -14,7 +14,7 @@ public class ListaDeComprasService {
 	
 	
 	public ListaDeComprasService(ListaDeComprasRepository listaDeComprasRepository, UsuarioRepository usuarioRepository ) {
-		
+		this.listaDeComprasRepository = listaDeComprasRepository; 
 	}
 	
 	

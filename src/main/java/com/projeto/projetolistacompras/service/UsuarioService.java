@@ -26,7 +26,9 @@ public class UsuarioService{
 	    return usuarioRepository.findById(id);		 
 	}
 	
-	public boolean validarSenha
+	public boolean validarSenha(String senhaDigitada, String senhaArmazenada) {
+		
+	}
 	
 	 
 	

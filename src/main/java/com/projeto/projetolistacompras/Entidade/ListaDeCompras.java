@@ -1,5 +1,6 @@
 package com.projeto.projetolistacompras.Entidade;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.ElementCollection;
@@ -56,9 +57,9 @@ public void setUsuario(Usuario usuario) {
 	this.usuario = usuario;
 }
 
-public List<String> getItens() {
-	return itens;
-}
+public List<String> getItens = new ArrayList<>(); 
+	
+
 
 public void setItens(List<String> itens) {
 	this.itens = itens;

@@ -21,6 +21,8 @@ public class UsuarioService{
 		
 	}
 	
+	public usuario criarUsuario
+	
 	
 	public Optional<Usuario> buscarPorId(Long id){
 	    return usuarioRepository.findById(id);		 
@@ -30,6 +32,8 @@ public class UsuarioService{
 		return passwordEncoder.matches(senhaDigitada, senhaArmazenada);
 		
 	}
+	
+	
 	
 	 
 	

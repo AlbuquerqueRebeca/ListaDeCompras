@@ -20,9 +20,11 @@ public class ListaDeComprasService {
 	}
 	
 	public ListaDeCompras criarLista(Long usuarioId, ListaDeCompras lista) {
-		return usuarioRepository.findById(usuarioId).map(usuario -> lista.setUsuario(usuario); 
-		return listaDeComprasRepository.save(lista);) 
-		
+		return usuarioRepository.findById(usuarioId).map(usuario -> {
+		lista.setUsuario(usuario); 
+		return listaDeComprasRepository.save(lista);
+		}) 
+		.orElseThrow(() -> new RuntimeException("Usuário não encontrado")); 
 	}
 	
 

@@ -29,7 +29,7 @@ public class ListaDeComprasService {
 		.orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 	}
 	
-	public List<ListaDeCompras> 
+	public List<ListaDeCompras>
 	
 
 }

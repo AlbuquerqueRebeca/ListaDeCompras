@@ -34,7 +34,7 @@ public class ListaDeComprasService {
 	}
 	
 	public void excluirLista(Long listaId) {
-		
+		listaDeComprasRepository.deleteById(listaId);
 	}
 
 	

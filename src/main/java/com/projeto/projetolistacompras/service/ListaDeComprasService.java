@@ -2,6 +2,7 @@ package com.projeto.projetolistacompras.service;
 
 import org.springframework.stereotype.Service;
 
+import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Repository.ListaDeComprasRepository;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 
@@ -19,7 +20,7 @@ public class ListaDeComprasService {
 	}
 	
 	public ListaDeCompras criarLista(Long usuarioId, ListaDeCompras lista) {
-		return usuarioRepository.findById(usuarioId)
+		return usuarioRepository.findById(usuarioId).map(usuario -> lista.setUsuario(usuario);)
 		
 	}
 	

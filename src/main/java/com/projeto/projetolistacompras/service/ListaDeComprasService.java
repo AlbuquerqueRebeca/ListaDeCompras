@@ -18,7 +18,9 @@ public class ListaDeComprasService {
 		this.usuarioRepository = usuarioRepository; 
 	}
 	
-	public ListaDeCompras criarLista
+	public ListaDeCompras criarLista(Long usuarioId, ListaDeCompras lista) {
+		
+	}
 	
 
 }

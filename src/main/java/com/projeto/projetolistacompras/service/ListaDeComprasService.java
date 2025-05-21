@@ -33,5 +33,7 @@ public class ListaDeComprasService {
 		return listaDeComprasRepository.findById(usuarioId);
 	}
 	
+	public void excluirLista()
+	
 
 }

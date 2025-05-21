@@ -29,7 +29,9 @@ public class ListaDeComprasService {
 		.orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 	}
 	
-	public List<ListaDeCompras> listarPorUsuario()
+	public List<ListaDeCompras> listarPorUsuario(Long usuarioId){
+		
+	}
 	
 
 }

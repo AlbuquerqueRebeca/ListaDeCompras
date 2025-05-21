@@ -30,10 +30,13 @@ public class ListaDeComprasService {
 	}
 	
 	public List<ListaDeCompras> listarPorUsuario(Long usuarioId){
-		return listaDeComprasRepository.findById(usuarioId);
+		return listaDeComprasRepository.findByUsuarioId(usuarioId);
 	}
 	
-	public void excluirLista()
+	public void excluirLista(Long listaId) {
+		
+	}
+
 	
 
 }

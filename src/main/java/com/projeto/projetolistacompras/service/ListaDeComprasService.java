@@ -1,5 +1,7 @@
 package com.projeto.projetolistacompras.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
@@ -24,8 +26,10 @@ public class ListaDeComprasService {
 		lista.setUsuario(usuario); 
 		return listaDeComprasRepository.save(lista);
 		}) 
-		.orElseThrow(() -> new RuntimeException("Usuário não encontrado")); 
+		.orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 	}
+	
+	public List<ListaDeCompras> 
 	
 
 }

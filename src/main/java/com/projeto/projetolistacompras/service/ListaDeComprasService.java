@@ -19,6 +19,7 @@ public class ListaDeComprasService {
 	}
 	
 	public ListaDeCompras criarLista(Long usuarioId, ListaDeCompras lista) {
+		return usuarioRepository.findById(usuarioId)
 		
 	}
 	

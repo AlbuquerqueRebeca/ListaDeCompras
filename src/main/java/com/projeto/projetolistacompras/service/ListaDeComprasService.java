@@ -30,7 +30,7 @@ public class ListaDeComprasService {
 	}
 	
 	public List<ListaDeCompras> listarPorUsuario(Long usuarioId){
-		
+		return listaDeComprasRepository.findById(usuarioId);
 	}
 	
 

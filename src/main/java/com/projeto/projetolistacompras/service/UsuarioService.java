@@ -2,6 +2,7 @@ package com.projeto.projetolistacompras.service;
 
 import java.util.Optional;
 
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class UsuarioService{
 	private final BCryptPasswordEncoder passwordEncoder; 
 	
 	
-	public UsuarioService(UsuarioRepository usuarioRepository) { 
+	public UsuarioService(UsuarioRepository usuarioRepository, BCryptPasswordEncoder passwordEncoder) { 
 		this.usuarioRepository = usuarioRepository;  
 		this.passwordEncoder = passwordEncoder; 
 		

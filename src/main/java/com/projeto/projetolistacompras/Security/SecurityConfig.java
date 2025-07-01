@@ -11,27 +11,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 	
-	
 	@Bean
-	public PasswordEncoder passwordEncoder() {  //metodo pra criptografar senha 
-		return new BCryptPasswordEncoder();
-		
-	}
 	
-	@Bean
-	public SecurityFilterChain  filterChain (HttpSecurity http) throws Exception{
-	
-		http
-		              
-		                 .cors(Customizer.withDefaults())
-		                 .csrf(csrf -> csrf.disable())
-		                 .authorizeHttpRequests(auth -> auth
-		                 .requestMatchers("/criar-usuario").permitAll()
-		                 .anyRequest().authenticated()
-		                 );
-		           
-		               return http.build();
-	}
-	
-
 }

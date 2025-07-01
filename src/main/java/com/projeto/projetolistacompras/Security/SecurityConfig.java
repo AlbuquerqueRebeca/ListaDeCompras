@@ -19,7 +19,7 @@ public class SecurityConfig {
 		
 		
 		
-		                              .cors()
+		                              .cors(Customizer.withDefaults())
 		
 	}
 	

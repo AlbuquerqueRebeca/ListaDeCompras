@@ -2,6 +2,7 @@ package com.projeto.projetolistacompras.service;
 
 import java.util.Optional;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.projeto.projetolistacompras.Entidade.Usuario;

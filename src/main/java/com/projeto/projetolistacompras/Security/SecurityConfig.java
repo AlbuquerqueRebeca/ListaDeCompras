@@ -24,6 +24,9 @@ public class SecurityConfig {
 		                              .authorizeHttpRequests(auth -> auth
 		                              .requestMatchers("/criar-usuario").permitAll()
 		                              .anyRequest().authenticated()
+		                              );
+		
+		                       return http.build();
 		                              
 		
 	}

@@ -22,7 +22,7 @@ public class UsuarioController {
 	
 	
 	//criando novo usuario
-	@PostMapping
+	@PostMapping("/criar-usuario")
 	
 	
 	

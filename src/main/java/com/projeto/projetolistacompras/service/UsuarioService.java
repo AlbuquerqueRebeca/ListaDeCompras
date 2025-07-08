@@ -1,9 +1,10 @@
 package com.projeto.projetolistacompras.service;
 
-import java.util.Optional;
 
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.projeto.projetolistacompras.Entidade.Usuario;
@@ -14,10 +15,10 @@ public class UsuarioService{
 	
 	private final UsuarioRepository usuarioRepository; 
 	
-	private final BCryptPasswordEncoder passwordEncoder; 
+	private final PasswordEncoder passwordEncoder; 
 	
 	
-	public UsuarioService(UsuarioRepository usuarioRepository, BCryptPasswordEncoder passwordEncoder) { 
+	public UsuarioService(UsuarioRepository usuarioRepository, PasswordEncoder passwordEncoder) { 
 		this.usuarioRepository = usuarioRepository;  
 		this.passwordEncoder = passwordEncoder; 
 		
@@ -26,10 +27,6 @@ public class UsuarioService{
 	public Usuario criarUsuario(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 		
-	}
-	
-	public Optional<Usuario> buscarPorId(Long id){
-	    return usuarioRepository.findById(id);		 
 	}
 	
 	public boolean validarSenha(String senhaDigitada, String senhaArmazenada) {

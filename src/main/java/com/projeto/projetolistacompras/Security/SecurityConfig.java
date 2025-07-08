@@ -34,9 +34,8 @@ public class SecurityConfig {
 		                              .authorizeHttpRequests(auth -> auth
 		                              .requestMatchers("/criar-usuario").permitAll()
 		                              .anyRequest().authenticated()
-		                              )
-		                              //desativando sessoes no servidor e habilitando autenticação stateless
-		                              .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+		                              );
+		                              
 		
 		
 		                       return http.build();

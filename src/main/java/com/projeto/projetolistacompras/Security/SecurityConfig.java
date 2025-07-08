@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -33,7 +34,9 @@ public class SecurityConfig {
 		                              .authorizeHttpRequests(auth -> auth
 		                              .requestMatchers("/criar-usuario").permitAll()
 		                              .anyRequest().authenticated()
-		                              );
+		                              )
+		                              //desativando sessoes no servidor e habilitando autenticação stateless
+		                              .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 		
 		
 		                       return http.build();

@@ -14,13 +14,12 @@ import jakarta.persistence.OneToMany;
 public class Usuario {
 	
 
-@Id	
-@GeneratedValue(strategy = GenerationType.IDENTITY )
-private long id; 
-
-private String nome;
+@Id
 @Column(unique = true) 
-private String email; 
+private String email;
+
+
+private String nome; 
 private String senha; 
 
 
@@ -29,11 +28,15 @@ private List<ListaDeCompras>listaDeCompras;
 
 
 public Usuario() { 
+	
 }
-	public Usuario(String nome, String email, String senha) { 
-		this.nome = nome;
-		this.email = email; 
-		this.senha = senha; 
+
+     
+     
+	public Usuario(String nome, String senha) { 
+		this.nome = nome; 
+		this.senha = senha;
+		this.email = email;
 		
 	}
 	

@@ -35,7 +35,7 @@ public class UsuarioService{
 	}
 	
 	public void excluirUsuario(String  email) { 
-		usuarioRepository.deleteById(id); 
+		usuarioRepository.deleteById(email); 
 	}
 	
 	public void salvar(Usuario usuario) {

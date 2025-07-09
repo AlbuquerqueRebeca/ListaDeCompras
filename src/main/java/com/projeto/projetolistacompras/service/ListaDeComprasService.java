@@ -21,8 +21,8 @@ public class ListaDeComprasService {
 		this.usuarioRepository = usuarioRepository; 
 	}
 	
-	public ListaDeCompras criarLista(Long usuarioId, ListaDeCompras lista) {
-		return usuarioRepository.findById(usuarioId).map(usuario -> {
+	public ListaDeCompras criarLista(String email, ListaDeCompras lista) {
+		return usuarioRepository.findByEmail(email).map(usuario -> {
 		lista.setUsuario(usuario); 
 		return listaDeComprasRepository.save(lista);
 		}) 

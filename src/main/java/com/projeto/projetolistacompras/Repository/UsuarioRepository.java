@@ -8,5 +8,5 @@ import com.projeto.projetolistacompras.Entidade.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, String> {
     
-	 Optional<String> findByEmail(String email);
+	 Optional<Usuario> findByEmail(String email);
 }

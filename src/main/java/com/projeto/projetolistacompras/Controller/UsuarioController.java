@@ -1,5 +1,7 @@
 package com.projeto.projetolistacompras.Controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -38,7 +40,14 @@ public class UsuarioController {
 // excluir usuario
 	
 @DeleteMapping("deletar-perfil")
-public ResponseEntity<String> ExcluirUsuario(@RequestParam String email){
+public ResponseEntity<String> excluirUsuario(@RequestParam String email){
+	Optional<Usuario> apagarPerfil = usuarioRepository.findByEmail(email);
+	if(apagarPerfil.isPresent()) {
+		usuarioRepository.delete(apagarPerfil.get());
+		return ResponseEntity.ok("Perfil deletado com Sucesso!!!");
+	}else {
+		return ResponseEntity.notFound().build();
+	}
 	
 }
 	

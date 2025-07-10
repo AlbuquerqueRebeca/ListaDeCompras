@@ -29,8 +29,8 @@ public class ListaDeComprasService {
 		.orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 	}
 	
-	public List<ListaDeCompras> listarPorUsuario(Long usuarioId){
-		return listaDeComprasRepository.findByUsuarioId(usuarioId);
+	public List<ListaDeCompras> listarPorUsuario(String email){
+		return listaDeComprasRepository.findByUsuarioId(email);
 	}
 	
 	public void excluirLista(Long listaId) {

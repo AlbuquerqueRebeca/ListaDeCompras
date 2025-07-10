@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 
 public interface ListaDeComprasRepository extends JpaRepository<ListaDeCompras, Long>{
-    List<ListaDeCompras> findByUsuarioId(String email); 
+   
+	List<ListaDeCompras> findByUsuarioEmail(String email); 
 }

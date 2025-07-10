@@ -30,7 +30,7 @@ public class ListaDeComprasService {
 	}
 	
 	public List<ListaDeCompras> listarPorUsuario(String email){
-		return listaDeComprasRepository.findByUsuarioId(email);
+		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}
 	
 	public void excluirLista(Long listaId) {

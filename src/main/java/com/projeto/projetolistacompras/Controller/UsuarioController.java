@@ -35,10 +35,12 @@ public class UsuarioController{
      usuarioService.salvar(usuario);
      return  ResponseEntity.ok("Conta criada com Sucesso!!!");
 
-	
-		
-
 	}
+	
+	
+	//Excluir Usuário
+	//Endpoint para excluir usuario atráves do email
+	@DeleteMapping
 
 	
 	

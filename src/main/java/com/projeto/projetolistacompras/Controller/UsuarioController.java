@@ -43,6 +43,9 @@ public class UsuarioController{
 	@DeleteMapping("/deletar-perfil")
 	public ResponseEntity<String>  excluirUsuario(String email){
 	Optional<Usuario> apagarPerfil = usuarioRepository.findByEmail(email);
+	if(apagarPerfil.isPresent()) {
+		
+	}
 		
 	}
 

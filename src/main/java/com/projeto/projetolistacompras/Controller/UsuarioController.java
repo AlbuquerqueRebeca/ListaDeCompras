@@ -20,7 +20,7 @@ import com.projeto.projetolistacompras.service.UsuarioService;
 public class UsuarioController{
 	
 	
-	
+	@Autowired
 	
 	
 	

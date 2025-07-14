@@ -44,6 +44,7 @@ public class UsuarioController{
 	public ResponseEntity<String>  excluirUsuario(String email){
 	Optional<Usuario> apagarPerfil = usuarioRepository.findByEmail(email);
 	if(apagarPerfil.isPresent()) {
+		usuarioRepository.delete(apagarPerfil.get());
 		
 	}
 		

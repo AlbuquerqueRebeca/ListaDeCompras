@@ -32,7 +32,9 @@ public class UsuarioController{
 	//Rota publica
 	@PostMapping("/usuarios/criar-usuario")
 	public ResponseEntity<String> criarUsuario(@RequestBody Usuario usuario){
-	usuarioService.salvar(usuario);
+     usuarioService.salvar(usuario);
+     return  ResponseEntity.ok("Conta criada com Sucesso!!!");
+
 	
 		
 

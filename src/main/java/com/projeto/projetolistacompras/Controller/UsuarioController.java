@@ -41,6 +41,7 @@ public class UsuarioController{
 	//Excluir Usuário
 	//Endpoint para excluir usuario atráves do email
 	@DeleteMapping("/deletar-perfil")
+	public ResponseEntity<String>  excluirUsuario()
 
 	
 	

@@ -27,6 +27,14 @@ public class UsuarioController{
 	UsuarioService usuarioService; 
 	
 	
+	//Criando novo usuario@RestController 
+	
+		
+
+	}
+
+	
+	
 	
 	
 	

@@ -27,7 +27,10 @@ public class UsuarioController{
 	UsuarioService usuarioService; 
 	
 	
-	//Criando novo usuario@RestController 
+	//Criando novo usuario
+	//Endpoint de criação de novo usuário
+	//Rota publica
+	@PostMapping
 	
 		
 

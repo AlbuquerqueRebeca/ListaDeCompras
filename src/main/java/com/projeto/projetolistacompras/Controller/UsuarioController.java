@@ -45,8 +45,10 @@ public class UsuarioController{
 	Optional<Usuario> apagarPerfil = usuarioRepository.findByEmail(email);
 	if(apagarPerfil.isPresent()) {
 		usuarioRepository.delete(apagarPerfil.get());
-		
+		return ResponseEntity.ok("Perfil deletado com Sucesso!!!");
 	}
+			
+		
 		
 	}
 

@@ -31,6 +31,7 @@ public class UsuarioController{
 	//Endpoint de criação de novo usuário
 	//Rota publica
 	@PostMapping("/usuarios/criar-usuario")
+	public ResponseEntity<String> criarUsuario()
 	
 		
 

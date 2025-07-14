@@ -32,7 +32,7 @@ public class SecurityConfig {
 		                              .cors(Customizer.withDefaults())
 		                              .csrf(csrf -> csrf.disable())
 		                              .authorizeHttpRequests(auth -> auth
-		                              .requestMatchers("/criar-usuario").permitAll()
+		                              .requestMatchers("/usuarios/**").permitAll()
 		                              .anyRequest().authenticated()
 		                              );
 		                              

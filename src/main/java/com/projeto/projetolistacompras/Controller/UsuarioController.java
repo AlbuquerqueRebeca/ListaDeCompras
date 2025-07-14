@@ -16,42 +16,31 @@ import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.UsuarioService;
 
-@RestController 
-@RequestMapping("/usuarios") 
-public class UsuarioController {
-	
-	
-	@Autowired
-	private UsuarioService usuarioService;
-	
-	@Autowired
-	private UsuarioRepository usuarioRepository; 
+@RestController
+public class UsuarioController{
 	
 	
 	
-	//criando novo usuario
-	@PostMapping("/criar-usuario")
-	public ResponseEntity<String> criarUsuario(@RequestBody Usuario usuario){
-		usuarioService.salvar(usuario);  //criar o metodo salvar na classe usuarioservice
-		return ResponseEntity.ok("Conta criada com Sucesso!!");
-				}
 	
 	
-// excluir usuario
 	
-@DeleteMapping("deletar-perfil")
-public ResponseEntity<String> excluirUsuario(@RequestParam String email){
-	Optional<Usuario> apagarPerfil = usuarioRepository.findByEmail(email);
-	if(apagarPerfil.isPresent()) {
-		usuarioRepository.delete(apagarPerfil.get());
-		return ResponseEntity.ok("Perfil deletado com Sucesso!!!");
-	}else {
-		return ResponseEntity.notFound().build();
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
-	
-	
-	
 
-}
+

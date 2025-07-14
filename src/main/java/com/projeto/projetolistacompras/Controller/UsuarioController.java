@@ -24,6 +24,7 @@ public class UsuarioController{
 	UsuarioRepository usuarioRepository; 
 	
 	@Autowired
+	UsuarioService usuarioService; 
 	
 	
 	

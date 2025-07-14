@@ -30,7 +30,7 @@ public class UsuarioController{
 	//Criando novo usuario
 	//Endpoint de criação de novo usuário
 	//Rota publica
-	@PostMapping
+	@PostMapping("/usuarios/criar-usuario")
 	
 		
 

@@ -23,6 +23,8 @@ public class UsuarioController{
 	@Autowired
 	UsuarioRepository usuarioRepository; 
 	
+	@Autowired
+	
 	
 	
 	

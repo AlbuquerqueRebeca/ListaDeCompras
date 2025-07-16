@@ -20,7 +20,7 @@ public class ListaDeComprasController {
 	
 	//criando uma lista nova
 	@PostMapping("/criar-lista")
-	public ResponseEntity<String> criarListaNova(@RequestBody)
+	public ResponseEntity<String> criarListaNova(@RequestBody ListaDeCompras lista)
 	
 	
 	

@@ -14,6 +14,8 @@ public class ListaDeComprasController {
 	private ListaDeComprasService listaDeComprasService;
 	
 	
+	@Autowired
+	
 	
 	
 

@@ -30,6 +30,7 @@ public class ListaDeComprasController {
 	
 	//Buscando lista por email
 	@GetMapping("/buscar/{email}")
+	public ResponseEntity<List<ListaDeCompras>>
 	
 	
 	

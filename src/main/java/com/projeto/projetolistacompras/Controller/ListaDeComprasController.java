@@ -36,6 +36,7 @@ public class ListaDeComprasController {
 	@GetMapping("/buscar/{email}")
 	public ResponseEntity<List<ListaDeCompras>> buscarPorEmail(@PathVariable String email){
 		List<ListaDeCompras> listas = listaDeComprasService.buscarPorEmail(email);
+		return ResponseEntity.ok(listas);
 	}
 	
 	

@@ -29,7 +29,7 @@ public class ListaDeComprasController {
 	
 	
 	//Buscando lista por email
-	@GetMapping
+	@GetMapping("/buscar/{email}")
 	
 	
 	

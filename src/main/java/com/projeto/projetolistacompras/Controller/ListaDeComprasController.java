@@ -17,7 +17,7 @@ public class ListaDeComprasController {
 	
 	
 	//criando uma lista nova
-	@PostMapping
+	@PostMapping("/criar-lista")
 	
 	
 	

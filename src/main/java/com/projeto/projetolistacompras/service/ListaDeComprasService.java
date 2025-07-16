@@ -40,6 +40,10 @@ public class ListaDeComprasService {
 	public List<ListaDeCompras> buscarPorEmail(String email){
 		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}
+	
+	public void salvar(ListaDeCompras listas) {
+		
+	}
 
 	
 

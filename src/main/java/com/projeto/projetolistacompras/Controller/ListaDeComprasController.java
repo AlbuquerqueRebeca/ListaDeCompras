@@ -58,6 +58,7 @@ public class ListaDeComprasController {
 	public ResponseEntity<String> excluindoLista(@RequestParam String email){
 		Optional<Usuario> apagarLista = UsuarioRepository.findById(email);
 		if(apagarLista.isPresent()) {
+			UsuarioRepository.delete(apagarLista.get());
 			
 		}
 	}

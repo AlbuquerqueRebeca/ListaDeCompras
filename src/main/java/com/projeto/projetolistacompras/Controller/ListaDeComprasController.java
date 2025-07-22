@@ -50,6 +50,6 @@ public class ListaDeComprasController {
 	}
 	
 	//Excluir lista
-	@DeleteMapping
+	@DeleteMapping("/deletar-lista")
 
 }

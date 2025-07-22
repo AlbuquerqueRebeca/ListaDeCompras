@@ -42,6 +42,6 @@ public class ListaDeComprasController {
 	
 	
 	//Editar lista 
-	@PutMapping
+	@PutMapping("/editar-lista")
 
 }

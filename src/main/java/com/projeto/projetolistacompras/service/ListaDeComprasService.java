@@ -41,8 +41,8 @@ public class ListaDeComprasService {
 		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}
 	
-	public void salvar(ListaDeCompras listas) {
-		
+	public void salvar(ListaDeCompras lista) {
+		listaDeComprasRepository.save(lista);
 	}
 
 	

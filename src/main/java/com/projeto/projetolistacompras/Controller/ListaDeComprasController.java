@@ -43,6 +43,6 @@ public class ListaDeComprasController {
 	
 	//Editar lista 
 	@PutMapping("/editar-lista")
-	public ResponseEntity<List<ListaDeCompras>> editarListas()
+	public ResponseEntity<List<ListaDeCompras>> editarListas(@RequestBody ListaDeCompras listasCompras)
 
 }

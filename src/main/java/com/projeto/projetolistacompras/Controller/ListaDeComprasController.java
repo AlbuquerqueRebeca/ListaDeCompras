@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
+import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.ListaDeComprasService;
 
@@ -56,6 +57,9 @@ public class ListaDeComprasController {
 	@DeleteMapping("/deletar-lista")
 	public ResponseEntity<String> excluindoLista(@RequestParam String email){
 		Optional<Usuario> apagarLista = UsuarioRepository.findById(email);
+		if(apagarLista.isPresent()) {
+			
+		}
 	}
 
 }

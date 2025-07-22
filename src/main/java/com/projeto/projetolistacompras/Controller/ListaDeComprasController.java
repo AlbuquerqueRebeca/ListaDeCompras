@@ -60,7 +60,8 @@ public class ListaDeComprasController {
 		if(apagarLista.isPresent()) {
 			UsuarioRepository.delete(apagarLista.get());
 			return ResponseEntity.ok("Perfil deletado com Sucesso!!!!");			
-		}
+		   }else {
+			   return ResponseEntity.notFound().build();		   }
 	}
 
 }

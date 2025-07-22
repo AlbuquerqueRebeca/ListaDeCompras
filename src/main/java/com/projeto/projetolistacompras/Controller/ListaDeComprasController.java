@@ -1,6 +1,7 @@
 package com.projeto.projetolistacompras.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
+import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.ListaDeComprasService;
 
 @RestController
@@ -52,6 +54,8 @@ public class ListaDeComprasController {
 	
 	//Excluir lista
 	@DeleteMapping("/deletar-lista")
-	public ResponseEntity<String> excluindoLista(@RequestParam)
+	public ResponseEntity<String> excluindoLista(@RequestParam String email){
+		Optional<Usuario> apagarLista = UsuarioRepository.findById(email);
+	}
 
 }

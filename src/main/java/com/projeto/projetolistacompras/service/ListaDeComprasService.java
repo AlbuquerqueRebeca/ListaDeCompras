@@ -46,7 +46,7 @@ public class ListaDeComprasService {
 	}
 
 	public ListaDeCompras editar(ListaDeCompras listaAtualizada) {
-		
+		return listaDeComprasRepository.save(listaAtualizada);
 	}
 
 }

@@ -45,6 +45,8 @@ public class ListaDeComprasController {
 	@PutMapping("/editar-lista")
 	public ResponseEntity<List<ListaDeCompras>> editarListas(@RequestBody ListaDeCompras listasCompras){
 		listaDeComprasService.editar(listaAtualizada);
+		List<ListaDeCompras> listaAtualizadas
+		
 	}
 
 }

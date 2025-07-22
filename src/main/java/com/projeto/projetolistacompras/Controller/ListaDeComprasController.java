@@ -59,7 +59,7 @@ public class ListaDeComprasController {
 		Optional<Usuario> apagarLista = UsuarioRepository.findById(email);
 		if(apagarLista.isPresent()) {
 			UsuarioRepository.delete(apagarLista.get());
-			
+			return ResponseEntity.ok("Perfil deletado com Sucesso!!!!");			
 		}
 	}
 

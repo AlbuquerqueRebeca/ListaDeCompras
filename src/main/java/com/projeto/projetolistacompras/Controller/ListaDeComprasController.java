@@ -51,5 +51,6 @@ public class ListaDeComprasController {
 	
 	//Excluir lista
 	@DeleteMapping("/deletar-lista")
+	public ResponseEntity<String> excluindoLista()
 
 }

@@ -10,7 +10,7 @@ public class JwtUtil {
     private String jwtSecret;
 	
 	
-	@Value
+	@Value("{projeto.jwtExpirationMs}")
 
 
 }

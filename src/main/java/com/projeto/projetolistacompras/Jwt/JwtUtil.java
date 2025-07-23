@@ -18,8 +18,12 @@ public class JwtUtil {
 		System.out.println("Gerando token para Usuário" + userDetail.getUsername());
 	    return Jwts.builder().setSubject(userDetail.getUsername())
 	    		                    .setIssuedAt(new date())
-	    		                    .signWith(getSigninKey(),SignatureAlgorithm.HS512)
+	    		                    .signWith(getSigninKey(),SignatureAlgorithm.HS512).compact();
 	
+	}
+	
+	public key getSigninKey() {
+		
 	}
 	
 }

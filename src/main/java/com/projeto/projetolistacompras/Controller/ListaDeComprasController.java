@@ -28,6 +28,14 @@ public class ListaDeComprasController {
 	@Autowired
 	private ListaDeComprasService listaDeComprasService;
 	
+	@Autowired	
+	private UsuarioRepository usuarioRepository;
+	
+	
+	
+	
+	
+	
 	
 	
 	//criando uma lista nova
@@ -56,9 +64,9 @@ public class ListaDeComprasController {
 	//Excluir lista
 	@DeleteMapping("/deletar-lista")
 	public ResponseEntity<String> excluindoLista(@RequestParam String email){
-		Optional<Usuario> apagarLista = UsuarioRepository.findById(email);
+		Optional<Usuario> apagarLista = usuarioRepository.findById(email);
 		if(apagarLista.isPresent()) {
-			UsuarioRepository.delete(apagarLista.get());
+		usuarioRepository.delete(apagarLista.get());
 			return ResponseEntity.ok("Perfil deletado com Sucesso!!!!");			
 		   }else {
 			   return ResponseEntity.notFound().build();		   }

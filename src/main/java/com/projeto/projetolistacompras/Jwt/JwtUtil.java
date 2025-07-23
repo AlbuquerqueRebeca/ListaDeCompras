@@ -15,6 +15,6 @@ public class JwtUtil {
 	
 	
 	public String generateTokenFromUserDetailsImpl(DetailsImpl userDetail) {
-		
+		System.out.println("Gerando token para Usuário" + userDetail.getUsername());
 	}
 }

@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 public class JwtUtil {
 	
 	@Value("${projeto.jwtsecret}")
-	private String jwtSecret;
+    private String jwtSecret;
+	
+	
+	@Value
+
 
 }

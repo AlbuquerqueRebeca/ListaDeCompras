@@ -39,7 +39,7 @@ public class JwtUtil {
 	}
 	
 	public String getUsernameToken(String token) {
-		S
+		System.out.println("Extraindo username do token" + token);
 	}
 	
 	

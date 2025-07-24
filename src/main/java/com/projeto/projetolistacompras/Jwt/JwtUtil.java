@@ -40,8 +40,12 @@ public class JwtUtil {
 	
 	public String getUsernameToken(String token) {
 		System.out.println("Extraindo username do token" + token);
-		return Jwts.parser().setSigningKey(getSigninKey())
+		return Jwts.parserBuilder()
+				            .setSigningKey(getSigninKey())
+				            .build()
 				            .parseClaimsJws(token)
+				            .getBody()
+				            .getSubject();
 
 	}
 	

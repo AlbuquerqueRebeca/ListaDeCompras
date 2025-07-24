@@ -38,8 +38,8 @@ public class JwtUtil {
 	return key;
 	}
 	
-	public String getUsernameToken() {
-		
+	public String getUsernameToken(String token) {
+		S
 	}
 	
 	

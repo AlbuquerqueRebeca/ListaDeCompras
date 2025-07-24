@@ -7,6 +7,8 @@ import javax.crypto.SecretKey;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -35,5 +37,12 @@ public class JwtUtil {
 	System.out.println("Chave de assinatura gerada");
 	return key;
 	}
+	
+	public String getUsernameToken() {
+		
+	}
+	
+	
+	
 	
 }

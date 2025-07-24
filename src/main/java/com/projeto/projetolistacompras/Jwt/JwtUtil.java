@@ -32,6 +32,7 @@ public class JwtUtil {
 	
 	public Key getSigninKey() {
 	SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
+	System.out.println("Chave de assinatura gerada");
 	}
 	
 }

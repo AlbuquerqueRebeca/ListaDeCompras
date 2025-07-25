@@ -46,7 +46,10 @@ public class JwtUtil {
 				            .parseClaimsJws(token)
 				            .getBody()
 				            .getSubject();
-
+}
+	
+	public boolean validateJwtToken() {
+		
 	}
 	
 	

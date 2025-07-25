@@ -8,7 +8,9 @@ import javax.crypto.SecretKey;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -51,7 +53,16 @@ public class JwtUtil {
 	public boolean validateJwtToken(String authToken) {
 		try {
 			System.out.println("validando Token" + authToken);
-		}
+			Claims claims = Jwts
+					         .parserBuilder()
+					         .setSigningKey(getSigninKey())
+					         .build()
+					         .parseClaimsJws(authToken)
+					         .getBody();
+			                return true;
+			        }catch(MalformedJwtException e){
+			        	System.out.println("Token inválido" + e.getMessage());
+			        }
 	}
 	
 	

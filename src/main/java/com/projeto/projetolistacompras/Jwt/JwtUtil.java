@@ -49,7 +49,9 @@ public class JwtUtil {
 }
 	
 	public boolean validateJwtToken(String authToken) {
-		
+		try {
+			System.out.println("validando Token" + authToken);
+		}
 	}
 	
 	

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -61,7 +62,9 @@ public class JwtUtil {
 					         .getBody();
 			                return true;
 			        }catch(MalformedJwtException e){
-			        	System.out.println("Token inválido" + e.getMessage());
+			        	System.out.println("Token Inválido" + e.getMessage());
+			        }catch(ExpiredJwtException e) {
+			        	System.out.println("Token Expirado" + e.getMessage());
 			        }
 	}
 	

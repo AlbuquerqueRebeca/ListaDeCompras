@@ -8,5 +8,6 @@ public class AuthFilterToken extends OncePerRequestFilter{
 	
 	   
 	  @Autowired
+	  private JwtUtil jwtUtil;
 
 }

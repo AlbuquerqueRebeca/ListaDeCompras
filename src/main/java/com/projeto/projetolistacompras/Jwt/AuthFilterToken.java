@@ -34,6 +34,7 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            	if(jwt != null && jwtUtil.validateJwtToken(jwt)) {
 		            		
 		            		      String username = jwtUtil.getUsernameToken(jwt);
+		            		      System.out.println("Username extraido do Token" + username);
 		            		
 		            	}
 		            }

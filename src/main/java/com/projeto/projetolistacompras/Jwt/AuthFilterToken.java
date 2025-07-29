@@ -3,6 +3,8 @@ package com.projeto.projetolistacompras.Jwt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.projeto.projetolistacompras.service.UsuarioDetailsServiceImpl;
+
 public class AuthFilterToken extends OncePerRequestFilter{
 	
 	
@@ -12,6 +14,6 @@ public class AuthFilterToken extends OncePerRequestFilter{
 	  
 	  
 	  @Autowired
-	  
+	  private UsuarioDetailsServiceImpl userDetailService;
 
 }

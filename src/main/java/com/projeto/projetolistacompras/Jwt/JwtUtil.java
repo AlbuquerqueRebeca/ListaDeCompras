@@ -27,7 +27,7 @@ public class JwtUtil {
 	@Value("{projeto.jwtExpirationMs}")
 	private int jwtExpirationMs;
 	
-	
+	//Gerando token JWT contendo username de usuario autenticado
 	public String generateTokenFromUserDetailsImpl(DetailsImpl userDetail) {
 		System.out.println("Gerando token para Usuário" + userDetail.getUsername());
 	    return Jwts.builder().setSubject(userDetail.getUsername())
@@ -35,13 +35,13 @@ public class JwtUtil {
 	    		                    .signWith(getSigninKey(), SignatureAlgorithm.HS512).compact();
 	
 	}
-	
+	//Decodificando a chave secreta base64
 	public Key getSigninKey() {
 	SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
 	System.out.println("Chave de assinatura gerada");
 	return key;
 	}
-	
+	// Extraindo o subject (username) do token
 	public String getUsernameToken(String token) {
 		System.out.println("Extraindo username do token" + token);
 		return Jwts.parserBuilder()
@@ -51,7 +51,7 @@ public class JwtUtil {
 				            .getBody()
 				            .getSubject();
 }
-	
+	//valida o token/ verifica assinatura
 	public boolean validateJwtToken(String authToken) {
 		try {
 			System.out.println("validando Token" + authToken);
@@ -61,7 +61,7 @@ public class JwtUtil {
 					         .build()
 					         .parseClaimsJws(authToken)
 					         .getBody();
-			                return true;
+			                return true;       //tratando diferentes tipos de exceçoes de erro
 			        } catch(MalformedJwtException e){
 			        	System.out.println("Token Inválido" + e.getMessage());
 			        } catch(ExpiredJwtException e) {

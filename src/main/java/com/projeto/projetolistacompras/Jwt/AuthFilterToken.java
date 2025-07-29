@@ -5,6 +5,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.projeto.projetolistacompras.service.UsuarioDetailsServiceImpl;
 
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 public class AuthFilterToken extends OncePerRequestFilter{
 	
 	
@@ -19,6 +23,7 @@ public class AuthFilterToken extends OncePerRequestFilter{
 	  
 	  @Override
 	  
-	        protected void doFilterInternal()
+	        protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+	                                                           
 
 }

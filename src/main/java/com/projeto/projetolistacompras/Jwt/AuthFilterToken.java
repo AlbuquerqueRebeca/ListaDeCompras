@@ -63,7 +63,9 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            	
 	              }
 	  
-	                            private String getToken()
+	                            private String getToken(HttpServletRequest request) {
+	                            	
+	                            
 
 		            	
 		            	

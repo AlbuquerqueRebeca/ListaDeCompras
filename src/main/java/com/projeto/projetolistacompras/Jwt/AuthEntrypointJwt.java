@@ -2,6 +2,7 @@ package com.projeto.projetolistacompras.Jwt;
 
 import javax.naming.AuthenticationException;
 
+import org.springframework.http.MediaType;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,16 @@ public class AuthEntrypointJwt implements AuthenticationEntryPoint {
 		   AuthenticationException authException) throws IOException, ServletException{
 	     System.out.println("Solicitação não autorizada: " + request.getRequestURI());
 	     System.out.println("Exceção de autenticação: " + authException.getMessage());
+	     
+	     
+	              response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+	     
+	     
+	     
+	     
+	     
+	     
+	     
    }
 
 

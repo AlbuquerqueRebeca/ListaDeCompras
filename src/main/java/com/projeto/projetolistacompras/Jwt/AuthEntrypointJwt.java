@@ -18,6 +18,7 @@ public class AuthEntrypointJwt implements AuthenticationEntryPoint {
    public void commence(HttpServletRequest request, HttpServletResponse response,
 		   AuthenticationException authException) throws IOException, ServletException{
 	     System.out.println("Solicitação não autorizada: " + request.getRequestURI());
+	     System.out.println("Exceção de autenticação: " + authException.getMessage());
    }
 
 

@@ -39,6 +39,10 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            		      
 		            		      
 		            		      UserDetails userDetails = userDetailService.loadUserByUsername(username);
+		            	          System.out.println("Detalhes de usuário carregados" + userDetails);
+		            	
+		            	
+		            	
 		            	}
 		            }
 	  }

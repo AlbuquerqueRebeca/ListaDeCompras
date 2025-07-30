@@ -5,6 +5,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.projeto.projetolistacompras.service.UsuarioDetailsServiceImpl;
@@ -65,7 +66,7 @@ public class AuthFilterToken extends OncePerRequestFilter{
 	  
 	                            private String getToken(HttpServletRequest request) {
 	                            String headerToken = request.getHeader("Authorization");
-	                            
+	                            if(StringUtils.hasText(headerToken))
 
 		            	
 		            	

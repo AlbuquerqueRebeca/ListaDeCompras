@@ -1,6 +1,7 @@
 package com.projeto.projetolistacompras.Jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -40,7 +41,7 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            		      
 		            		      UserDetails userDetails = userDetailService.loadUserByUsername(username);
 		            	          System.out.println("Detalhes de usuário carregados" + userDetails);
-		            	
+		            	         UsernamePasswordAuthenticationToken auth = 
 		            	
 		            	
 		            	}

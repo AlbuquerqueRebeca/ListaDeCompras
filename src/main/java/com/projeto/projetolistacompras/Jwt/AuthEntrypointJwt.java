@@ -3,7 +3,7 @@ package com.projeto.projetolistacompras.Jwt;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.naming.AuthenticationException;
+
 
 import org.springframework.http.MediaType;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.jsonwebtoken.io.IOException;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,7 +22,7 @@ public class AuthEntrypointJwt implements AuthenticationEntryPoint {
 
    @Override
    public void commence(HttpServletRequest request, HttpServletResponse response,
-		   AuthenticationException authException) throws IOException, ServletException{
+		   org.springframework.security.core.AuthenticationException authException) throws java.io.IOException, ServletException{
 	     System.out.println("Solicitação não autorizada: " + request.getRequestURI());
 	     System.out.println("Exceção de autenticação: " + authException.getMessage());
 	     
@@ -36,6 +36,7 @@ public class AuthEntrypointJwt implements AuthenticationEntryPoint {
 	               
 	               final ObjectMapper mapper = new ObjectMapper();
 	               mapper.writeValue(response.getOutputStream(), body);
+	               
    }
 
 

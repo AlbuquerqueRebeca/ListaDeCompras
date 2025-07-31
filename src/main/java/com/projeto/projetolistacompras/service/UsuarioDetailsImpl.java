@@ -25,6 +25,7 @@ public class UsuarioDetailsImpl implements UserDetails{
         	    super();
         	    this.email = email;
         	    this.nome = nome;
+        	    this.username = username;
         	 
          }
 }

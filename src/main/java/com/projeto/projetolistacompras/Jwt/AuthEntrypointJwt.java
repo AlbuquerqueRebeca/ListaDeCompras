@@ -35,7 +35,7 @@ public class AuthEntrypointJwt implements AuthenticationEntryPoint {
 	               body.put("error", "unauthorized");
 	               
 	               final ObjectMapper mapper = new ObjectMapper();
-	     
+	               mapper.writeValue(response.getOutputStream(), body);
    }
 
 

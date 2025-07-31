@@ -21,5 +21,8 @@ public class UsuarioDetailsImpl implements UserDetails{
          public UsuarioDetailsImpl(String email, String nome, String username, String password,
         		Collection<? extends GrantedAuthority> authorities) {
         	 
+        	 
+        	    super();
+        	 
          }
 }

@@ -1,5 +1,8 @@
 package com.projeto.projetolistacompras.Jwt;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.naming.AuthenticationException;
 
 import org.springframework.http.MediaType;
@@ -25,7 +28,7 @@ public class AuthEntrypointJwt implements AuthenticationEntryPoint {
 	              response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 	              response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 	     
-	     
+	               final Map<String, Object> body = new HashMap<>();
 	     
 	     
 	     

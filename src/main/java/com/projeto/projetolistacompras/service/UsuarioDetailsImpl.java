@@ -5,6 +5,8 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.projeto.projetolistacompras.Entidade.Usuario;
+
 public class UsuarioDetailsImpl implements UserDetails{
 	
 	
@@ -32,6 +34,12 @@ public class UsuarioDetailsImpl implements UserDetails{
          }
          
          public static UsuarioDetailsImpl build(Usuario usuario) {
+        	      
+        	           return  new UsuarioDetailsImpl(usuario.getEmail(),
+        	        		   usuario.getNome(),
+        	        		   usuario.getlogin(),
+        	        		   usuario.getSenha(),
+        	        		   
         	 
          }
          

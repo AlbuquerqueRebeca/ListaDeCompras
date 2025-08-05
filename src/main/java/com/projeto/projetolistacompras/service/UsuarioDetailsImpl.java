@@ -38,9 +38,9 @@ public class UsuarioDetailsImpl implements UserDetails{
         	      
         	           return  new UsuarioDetailsImpl(usuario.getEmail(),
         	        		   usuario.getNome(),
-        	        		   usuario.getlogin(),
+        	        		   usuario.getLogin(),
         	        		   usuario.getSenha(),
-        	        		   new ArrayList<>();
+        	        		   new ArrayList<>());
         	 
          }
          
@@ -50,7 +50,7 @@ public class UsuarioDetailsImpl implements UserDetails{
          @Override
          public Collection<? extends GrantedAuthority> getAuthorities(){
         	       
-        	             return authories;
+        	             return authorities;
          } 
          
          @Override
@@ -79,7 +79,8 @@ public class UsuarioDetailsImpl implements UserDetails{
          
          @Override
          public boolean isEnabled() {
-        	 
+        	       
+        	       return true;
          }
          
 }

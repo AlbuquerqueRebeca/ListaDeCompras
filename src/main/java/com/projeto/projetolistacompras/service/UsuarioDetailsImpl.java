@@ -72,7 +72,13 @@ public class UsuarioDetailsImpl implements UserDetails{
          }
          
          @Override
-         public boolean isAAccountNonLocked() {
+         public boolean isAccountNonLocked() {
+        	          
+        	        return true;
+         }
+         
+         @Override
+         public boolean isEnabled() {
         	 
          }
          

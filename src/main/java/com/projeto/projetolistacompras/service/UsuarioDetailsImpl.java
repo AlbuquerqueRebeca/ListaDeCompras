@@ -1,5 +1,6 @@
 package com.projeto.projetolistacompras.service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -39,7 +40,7 @@ public class UsuarioDetailsImpl implements UserDetails{
         	        		   usuario.getNome(),
         	        		   usuario.getlogin(),
         	        		   usuario.getSenha(),
-        	        		   
+        	        		   new ArrayList<>();
         	 
          }
          

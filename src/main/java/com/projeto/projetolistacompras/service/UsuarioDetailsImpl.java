@@ -67,7 +67,10 @@ public class UsuarioDetailsImpl implements UserDetails{
          
          @Override
          public boolean isAccountNonExpired() {
-        	 
+        	       
+        	       return true;
          }
+         
+         @Override
          
 }

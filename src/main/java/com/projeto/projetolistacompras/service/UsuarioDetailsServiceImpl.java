@@ -11,5 +11,9 @@ public class UsuarioDetailsServiceImpl implements UserDetailsService{
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	
+	
+	
+	@Autowired
 
 }

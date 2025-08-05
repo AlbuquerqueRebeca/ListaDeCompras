@@ -69,7 +69,6 @@ public Usuario() {
 		this.login = login;
 	}
 	
-	
 	public List<ListaDeCompras> getListaDeCompras() {
 		return listaDeCompras;
 	}

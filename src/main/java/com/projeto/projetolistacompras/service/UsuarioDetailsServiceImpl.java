@@ -1,5 +1,9 @@
 package com.projeto.projetolistacompras.service;
 
-public class UsuarioDetailsServiceImpl {
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+public class UsuarioDetailsServiceImpl implements UserDetailsService{
+	
+	
 
 }

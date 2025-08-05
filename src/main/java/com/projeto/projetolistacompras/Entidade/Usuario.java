@@ -62,6 +62,11 @@ public Usuario() {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	public String getLogin() {
+		return login;
+	}
+	
+	
 	public List<ListaDeCompras> getListaDeCompras() {
 		return listaDeCompras;
 	}

@@ -54,5 +54,8 @@ public class UsuarioDetailsImpl implements UserDetails{
          } 
          
          @Override
+         public String getPassword() {
+        	 
+         }
          
 }

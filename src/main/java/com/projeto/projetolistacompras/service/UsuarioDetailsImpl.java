@@ -55,6 +55,12 @@ public class UsuarioDetailsImpl implements UserDetails{
          
          @Override
          public String getPassword() {
+        	      
+        	      return password;
+         }
+         
+         @Override
+         public String getUsername() {
         	 
          }
          

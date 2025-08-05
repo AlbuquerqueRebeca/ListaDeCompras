@@ -72,5 +72,8 @@ public class UsuarioDetailsImpl implements UserDetails{
          }
          
          @Override
+         public boolean isAAccountNonLocked() {
+        	 
+         }
          
 }

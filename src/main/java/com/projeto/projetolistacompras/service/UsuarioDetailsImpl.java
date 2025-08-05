@@ -61,7 +61,10 @@ public class UsuarioDetailsImpl implements UserDetails{
          
          @Override
          public String getUsername() {
-        	 
+        	  
+        	     return username;
          }
+         
+         @Override
          
 }

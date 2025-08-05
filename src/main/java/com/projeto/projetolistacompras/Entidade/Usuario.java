@@ -65,6 +65,9 @@ public Usuario() {
 	public String getLogin() {
 		return login;
 	}
+	public void  setLogin(String login) {
+		
+	}
 	
 	
 	public List<ListaDeCompras> getListaDeCompras() {

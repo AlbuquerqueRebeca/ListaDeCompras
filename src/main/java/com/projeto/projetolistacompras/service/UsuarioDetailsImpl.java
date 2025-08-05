@@ -30,4 +30,14 @@ public class UsuarioDetailsImpl implements UserDetails{
         	    this.authorities = authorities;
         	 
          }
+         
+         public static UsuarioDetailsImpl build(Usuario usuario) {
+        	 
+         }
+         
+         
+         
+         
+         
+         
 }

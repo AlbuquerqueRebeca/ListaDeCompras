@@ -53,6 +53,6 @@ public class UsuarioDetailsImpl implements UserDetails{
         	             return authories;
          } 
          
-         
+         @Override
          
 }

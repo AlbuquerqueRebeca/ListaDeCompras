@@ -46,8 +46,8 @@ public class UsuarioDetailsImpl implements UserDetails{
          
          private Collection<? extends GrantedAuthority> authorities;
          
-         
-         
+                           
+         @Override
          
          
          

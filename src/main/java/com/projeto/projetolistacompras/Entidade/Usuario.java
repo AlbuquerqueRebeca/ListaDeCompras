@@ -20,6 +20,7 @@ private String email;
 
 
 private String nome; 
+private String login;
 private String senha; 
 
 

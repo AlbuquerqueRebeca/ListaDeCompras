@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 
 public class UsuarioDetailsServiceImpl implements UserDetailsService{
@@ -18,7 +19,8 @@ public class UsuarioDetailsServiceImpl implements UserDetailsService{
 	
 	@Autowired
 	public UserDetails loadUserByUsername(String username)throws UsernameNotFoundException{
-		
+		 Usuario usuario = usuarioRepository.findByLogin(username).get();
+	      return UsuarioDetailsImpl.build(usuario);
 	}
 
 }

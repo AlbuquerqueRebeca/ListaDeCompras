@@ -32,7 +32,7 @@ public class AuthService {
 		         String token = jwtUtil.generateTokenFromUserDetailsImpl(userAuthenticate);
 		          
 		          AcessDto acessDto = new AcessDto(token);
-		          
+		          System.out.println("Authenticação bem sucedida!!" + authDto.getUsername());
 		   
 		   }
 		

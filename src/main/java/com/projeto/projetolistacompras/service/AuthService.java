@@ -2,6 +2,7 @@ package com.projeto.projetolistacompras.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
 
 import com.projeto.projetolistacompras.Jwt.JwtUtil;
@@ -18,6 +19,12 @@ public class AuthService {
 	
 	
 	public AcessDto login(AuthenticationDto authDto) {
+		
+		   
+		   try {
+			     
+			     UsernamePasswordAuthenticationToken userAuth = ne
+		   }
 		
 	}
 	

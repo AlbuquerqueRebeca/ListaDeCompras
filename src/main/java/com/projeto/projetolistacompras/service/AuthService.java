@@ -40,6 +40,8 @@ public class AuthService {
 		            }catch(BadCredentialsException e) {
 		            	
 		            }
+		   
+		                       return  new AcessDto("Acesso negado");
 		
 	}
 	

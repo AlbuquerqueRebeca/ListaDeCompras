@@ -23,7 +23,7 @@ public class AuthService {
 		   
 		   try {
 			     
-			     UsernamePasswordAuthenticationToken userAuth = ne
+			     UsernamePasswordAuthenticationToken userAuth = new UsernamePasswordAuthenticationToken(authDto.getUsername(), authDto.getPassword());
 		   }
 		
 	}

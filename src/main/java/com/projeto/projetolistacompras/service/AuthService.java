@@ -28,6 +28,9 @@ public class AuthService {
 		         Authentication authentication = authenticationManager.authenticate(userAuth);
 		         
 		         UsuarioDetailsImpl userAuthenticate = (UsuarioDetailsImpl) authentication.getPrincipal();
+		         
+		         String token = jwtUtil.generateTokenFromUserDetailsImpl(userAuthenticate);
+		  
 		   
 		   }
 		

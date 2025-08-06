@@ -30,7 +30,9 @@ public class AuthService {
 		         UsuarioDetailsImpl userAuthenticate = (UsuarioDetailsImpl) authentication.getPrincipal();
 		         
 		         String token = jwtUtil.generateTokenFromUserDetailsImpl(userAuthenticate);
-		  
+		          
+		          AcessDto acessDto = new AcessDto(token);
+		          
 		   
 		   }
 		

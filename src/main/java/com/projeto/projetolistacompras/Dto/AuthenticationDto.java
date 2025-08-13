@@ -13,7 +13,7 @@ public class AuthenticationDto {
 	}
 	
 	
-	public void SetUsername() {
+	public void setUsername() {
 	this.username = username;
 	
 	}
@@ -23,7 +23,7 @@ public class AuthenticationDto {
 	}
 	
 	public void setPassword() {
-		
+    this.password = password;
 	}
 
 }

@@ -14,6 +14,11 @@ public class AcessDto {
 	
 	public String getToken() {
     return token;
+	
+	}
+	
+	public void setToken() {
+		
 	}
 
 }

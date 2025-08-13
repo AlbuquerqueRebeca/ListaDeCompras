@@ -8,7 +8,8 @@ public class AcessDto {
 	
 	
 	public AcessDto(String token) {
-		
+		super();
+		this.token = token;
 	}
 
 }

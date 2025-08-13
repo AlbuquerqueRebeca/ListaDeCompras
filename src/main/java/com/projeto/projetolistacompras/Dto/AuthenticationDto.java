@@ -11,5 +11,10 @@ public class AuthenticationDto {
 	public String getUsername() {
 		return username;
 	}
+	
+	
+	public void SetUsername() {
+		
+	}
 
 }

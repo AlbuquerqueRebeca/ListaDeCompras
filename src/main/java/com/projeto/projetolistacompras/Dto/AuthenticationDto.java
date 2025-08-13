@@ -21,5 +21,9 @@ public class AuthenticationDto {
 	public String getPassword() {
 		return password;
 	}
+	
+	public void setPassword() {
+		
+	}
 
 }

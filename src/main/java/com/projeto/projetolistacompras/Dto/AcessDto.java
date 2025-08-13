@@ -13,7 +13,7 @@ public class AcessDto {
 	}
 	
 	public String getToken() {
-
+    return token;
 	}
 
 }

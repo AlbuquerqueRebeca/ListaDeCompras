@@ -19,7 +19,7 @@ public class AuthenticationDto {
 	}
 	
 	public String getPassword() {
-		
+		return password;
 	}
 
 }

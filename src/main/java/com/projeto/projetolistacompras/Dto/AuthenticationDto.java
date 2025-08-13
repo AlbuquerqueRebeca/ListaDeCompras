@@ -9,7 +9,7 @@ public class AuthenticationDto {
 	
 	
 	public String getUsername() {
-		
+		return username;
 	}
 
 }

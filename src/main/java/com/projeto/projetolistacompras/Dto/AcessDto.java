@@ -11,5 +11,9 @@ public class AcessDto {
 		super();
 		this.token = token;
 	}
+	
+	public String getToken() {
+
+	}
 
 }

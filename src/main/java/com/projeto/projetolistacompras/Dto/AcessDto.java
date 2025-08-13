@@ -7,7 +7,7 @@ public class AcessDto {
 	
 	
 	
-	public AcessDto() {
+	public AcessDto(String token) {
 		
 	}
 

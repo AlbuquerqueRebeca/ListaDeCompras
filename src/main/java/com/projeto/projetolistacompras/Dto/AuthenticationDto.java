@@ -15,6 +15,11 @@ public class AuthenticationDto {
 	
 	public void SetUsername() {
 	this.username = username;
+	
+	}
+	
+	public String getPassword() {
+		
 	}
 
 }

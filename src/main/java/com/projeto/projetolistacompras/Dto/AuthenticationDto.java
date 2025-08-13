@@ -4,5 +4,6 @@ public class AuthenticationDto {
 	
 	
 	private String username;
+	private String password;
 
 }

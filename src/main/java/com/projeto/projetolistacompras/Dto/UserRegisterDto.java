@@ -41,6 +41,11 @@ public class UserRegisterDto {
 	   public String getSenha() {
 		   return senha;
 	   }
+	   
+	   public void setSenha() {
+		   
+	   }
+	   
 	
 	
 	

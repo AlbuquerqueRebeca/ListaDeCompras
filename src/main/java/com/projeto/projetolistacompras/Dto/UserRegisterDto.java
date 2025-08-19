@@ -31,6 +31,7 @@ public class UserRegisterDto {
 		}
 	   
 	   public String getLogin() {
+		   return login;
 		   
 	   }
 	

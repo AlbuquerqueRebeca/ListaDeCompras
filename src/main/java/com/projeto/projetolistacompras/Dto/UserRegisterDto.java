@@ -37,6 +37,10 @@ public class UserRegisterDto {
 	   public void setLogin() {
 		 this.login = login;  
 	   }
+	   
+	   public String getSenha() {
+		   
+	   }
 	
 	
 	

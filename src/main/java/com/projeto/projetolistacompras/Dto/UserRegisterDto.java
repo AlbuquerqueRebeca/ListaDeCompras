@@ -14,7 +14,7 @@ public class UserRegisterDto {
 	   
 	   
 	   public String getEmail() {
-		   
+		   return email; 
 	   }
 	
 	

@@ -24,7 +24,7 @@ public class UserRegisterDto {
 	   
 	   
 	   public String getNome() {
-		   
+		   return nome;
 	   }
 	
 	

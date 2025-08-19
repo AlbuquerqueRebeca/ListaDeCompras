@@ -7,7 +7,7 @@ public class UserRegisterDto {
 	
 	  
 	   public String email;
-	
+	   public String nome;
 	
 	
 	

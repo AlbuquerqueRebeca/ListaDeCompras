@@ -28,6 +28,9 @@ public class UserRegisterDto {
 	   
 	   public void setNome(String nome) {
 		   this.nome = nome;
+		}
+	   
+	   public String getLogin() {
 		   
 	   }
 	

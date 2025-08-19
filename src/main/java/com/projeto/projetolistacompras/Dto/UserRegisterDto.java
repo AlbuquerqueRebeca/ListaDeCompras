@@ -17,7 +17,6 @@ public class UserRegisterDto {
 		   return email; 
 	   }
 	   
-	   
 	   public void setEmail() {
 		 this.email = email;
 	   }
@@ -25,6 +24,10 @@ public class UserRegisterDto {
 	   
 	   public String getNome() {
 		   return nome;
+	   }
+	   
+	   public void setNome() {
+		   
 	   }
 	
 	

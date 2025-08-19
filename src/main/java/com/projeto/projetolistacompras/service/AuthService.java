@@ -7,6 +7,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import com.projeto.projetolistacompras.Dto.AcessDto;
+import com.projeto.projetolistacompras.Dto.AuthenticationDto;
 import com.projeto.projetolistacompras.Jwt.JwtUtil;
 
 @Service

@@ -43,7 +43,7 @@ public class UserRegisterDto {
 	   }
 	   
 	   public void setSenha() {
-		   
+		 this.senha = senha;
 	   }
 	   
 	

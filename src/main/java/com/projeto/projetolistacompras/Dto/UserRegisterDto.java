@@ -10,6 +10,12 @@ public class UserRegisterDto {
 	   public String nome;
 	   public String login;
 	   public String senha;
+	   
+	   
+	   
+	   public String getEmail() {
+		   
+	   }
 	
 	
 	

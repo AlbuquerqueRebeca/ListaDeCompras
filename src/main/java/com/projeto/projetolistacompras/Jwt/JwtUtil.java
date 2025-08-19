@@ -8,6 +8,8 @@ import javax.crypto.SecretKey;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.projeto.projetolistacompras.service.UsuarioDetailsImpl;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -28,7 +30,7 @@ public class JwtUtil {
 	private int jwtExpirationMs;
 	
 	//Gerando token JWT contendo username de usuario autenticado
-	public String generateTokenFromUserDetailsImpl(DetailsImpl userDetail) {
+	public String generateTokenFromUserDetailsImpl(UsuarioDetailsImpl userDetail) {
 		System.out.println("Gerando token para Usuário" + userDetail.getUsername());
 	    return Jwts.builder().setSubject(userDetail.getUsername())
 	    		                    .setIssuedAt(new Date())

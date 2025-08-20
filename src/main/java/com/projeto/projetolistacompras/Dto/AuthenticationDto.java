@@ -13,7 +13,7 @@ public class AuthenticationDto {
 	}
 	
 	
-	public void setUsername() {
+	public void setUsername(String username) {
 	this.username = username;
 	
 	}

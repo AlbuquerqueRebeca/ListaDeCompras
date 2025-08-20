@@ -26,7 +26,7 @@ public class JwtUtil {
     private String jwtSecret;
 	
 	
-	@Value("{projeto.jwtExpirationMs}")
+	@Value("${projeto.jwtExpirationMs}")
 	private int jwtExpirationMs;
 	
 	//Gerando token JWT contendo username de usuario autenticado

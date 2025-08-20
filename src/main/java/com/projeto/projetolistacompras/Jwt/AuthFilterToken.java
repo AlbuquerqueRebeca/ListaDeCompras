@@ -1,5 +1,7 @@
 package com.projeto.projetolistacompras.Jwt;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -10,7 +12,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.projeto.projetolistacompras.service.UsuarioDetailsServiceImpl;
 
-import io.jsonwebtoken.io.IOException;
+
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -62,7 +64,7 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            	           filterChain.doFilter(request, response);
 		            	
 		            	
-	              }
+	                   }
 	  
 	                            private String getToken(HttpServletRequest request) {
 	                            String headerToken = request.getHeader("Authorization");
@@ -75,6 +77,6 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            	
 		            	
 		            }
-	  }
+	  
 
-
+}

@@ -17,6 +17,7 @@ import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.UsuarioService;
 
 @RestController
+@RequestMapping("/api")
 public class UsuarioController{
 	
 	
@@ -30,7 +31,7 @@ public class UsuarioController{
 	//Criando novo usuario
 	//Endpoint de criação de novo usuário
 	//Rota publica
-	@PostMapping("/usuarios/criar-usuario")
+	@PostMapping("/criar-usuario")
 	public ResponseEntity<String> criarUsuario(@RequestBody Usuario usuario){
      usuarioService.salvar(usuario);
      return  ResponseEntity.ok("Conta criada com Sucesso!!!");
@@ -49,6 +50,8 @@ public class UsuarioController{
 		}else {
 			return ResponseEntity.notFound().build();
 		}
+	
+	  
 			
 		
 		

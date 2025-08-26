@@ -51,17 +51,17 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 		
-		http
 		
 		
 		
 		
-		                              .cors(Customizer.withDefaults())
-		                              .csrf(csrf -> csrf.disable())
+		
+		                             http.cors(Customizer.withDefaults());
+		                             http.csrf(csrf -> csrf.disable())
 		                              .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
 		                              .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-		                              .authorizeHttpRequests(auth -> auth
-		                              .requestMatchers("/usuarios/**","/login").permitAll()
+		                              .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll()		                              .requestMatchers("/usuarios/criar-usuario").permitAll()
+		                              .requestMatchers("/api/criar-usuario**").permitAll()
 		                              .anyRequest().authenticated()
 		                              );
 		                              

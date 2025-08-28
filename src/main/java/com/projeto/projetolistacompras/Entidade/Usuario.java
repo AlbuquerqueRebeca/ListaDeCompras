@@ -32,7 +32,8 @@ private List<ListaDeCompras>listaDeCompras;
 
 
   public Usuario(UsuarioDto dto) {
-	  
+	  this.nome = dto.getNome();
+	   
   }
 
      

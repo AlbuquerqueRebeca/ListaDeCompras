@@ -22,10 +22,10 @@ public class UsuarioController{
 	
 	
 	@Autowired
-	UsuarioRepository usuarioRepository; 
+	private UsuarioRepository usuarioRepository; 
 	
 	@Autowired
-	UsuarioService usuarioService; 
+	private UsuarioService usuarioService; 
 	
 	
 	//Criando novo usuario

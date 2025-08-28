@@ -36,7 +36,8 @@ public class UsuarioDetailsImpl implements UserDetails{
          
          public static UsuarioDetailsImpl build(Usuario usuario) {
         	      
-        	           return  new UsuarioDetailsImpl(usuario.getEmail(),
+        	           return  new UsuarioDetailsImpl(
+        	        		   usuario.getEmail(),
         	        		   usuario.getNome(),
         	        		   usuario.getLogin(),
         	        		   usuario.getSenha(),
@@ -75,6 +76,11 @@ public class UsuarioDetailsImpl implements UserDetails{
          public boolean isAccountNonLocked() {
         	          
         	        return true;
+         }
+         
+         @Override
+         public boolean isCredentialsNonExpired() {
+        	 return true;
          }
          
          @Override

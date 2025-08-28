@@ -43,7 +43,9 @@ public class UsuarioService{
 	}
 	
 	
-	public void inserir()
+	public void inserir(UsuariDto usuario) {
+		
+	}
 	
 	
 	 

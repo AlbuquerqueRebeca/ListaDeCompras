@@ -22,7 +22,7 @@ import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.ListaDeComprasService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/listas")
 public class ListaDeComprasController {
 
 	@Autowired

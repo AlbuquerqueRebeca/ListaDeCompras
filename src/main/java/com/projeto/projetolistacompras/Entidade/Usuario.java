@@ -34,10 +34,10 @@ public Usuario() {
 
      
      
-	public Usuario(String nome, String senha) { 
-		this.nome = nome; 
+	public Usuario(String email, String nome, String senha) { 
+		this.email = email; 
+		this.nome = nome;
 		this.senha = senha;
-		this.email = email;
 		
 	}
 	

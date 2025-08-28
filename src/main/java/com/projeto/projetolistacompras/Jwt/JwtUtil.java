@@ -34,15 +34,19 @@ public class JwtUtil {
 		System.out.println("Gerando token para Usuário" + userDetail.getUsername());
 	    return Jwts.builder().setSubject(userDetail.getUsername())
 	    		                    .setIssuedAt(new Date())
+	    		                    .setExpiration(new Date(new Date().getTime() + jwtExpirationMs))   		                   
 	    		                    .signWith(getSigninKey(), SignatureAlgorithm.HS512).compact();
-	
 	}
+	
+	
 	//Decodificando a chave secreta base64
 	public Key getSigninKey() {
 	SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
 	System.out.println("Chave de assinatura gerada");
 	return key;
 	}
+	
+	
 	// Extraindo o subject (username) do token
 	public String getUsernameToken(String token) {
 		System.out.println("Extraindo username do token" + token);

@@ -40,7 +40,7 @@ public class AuthService {
 		                  return acessDto;
 		             
 		            }catch(BadCredentialsException e) {
-		            	
+		            	System.out.println("FALHA NA AUTENTICAÇAO");
 		            }
 		   
 		                       return  new AcessDto("Acesso negado");

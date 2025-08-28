@@ -35,6 +35,7 @@ private List<ListaDeCompras>listaDeCompras;
 	  this.nome = dto.getNome();
 	  this.login = dto.getLogin();
 	  this.email = dto.getEmail();
+	  this.senha = dto.getSenha();
   }
 
      

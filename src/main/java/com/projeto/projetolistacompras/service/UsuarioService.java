@@ -45,6 +45,7 @@ public class UsuarioService{
 	
 	public void inserir(UsuariDto usuario) {
 	Usuario usuario = new Usuario(usuario);
+	Usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
 	}
 	
 	

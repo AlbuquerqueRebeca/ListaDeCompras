@@ -34,6 +34,7 @@ private List<ListaDeCompras>listaDeCompras;
   public Usuario(UsuarioDto dto) {
 	  this.nome = dto.getNome();
 	  this.login = dto.getLogin();
+	  this.email = dto.getEmail();
   }
 
      

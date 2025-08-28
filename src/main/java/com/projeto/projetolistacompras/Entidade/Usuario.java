@@ -2,6 +2,8 @@ package com.projeto.projetolistacompras.Entidade;
 
 import java.util.List;
 
+import com.projeto.projetolistacompras.Dto.UsuarioDto;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,9 +30,10 @@ private String senha;
 private List<ListaDeCompras>listaDeCompras;
 
 
-public Usuario() { 
-	
-}
+
+  public Usuario(UsuarioDto dto) {
+	  
+  }
 
      
      

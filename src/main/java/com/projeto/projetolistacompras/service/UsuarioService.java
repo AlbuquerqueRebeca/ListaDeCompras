@@ -7,6 +7,7 @@ package com.projeto.projetolistacompras.service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.projeto.projetolistacompras.Dto.UsuarioDto;
 import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 
@@ -43,8 +44,8 @@ public class UsuarioService{
 	}
 	
 	
-	public void inserir(UsuariDto usuario) {
-	Usuario usuario = new Usuario(usuario);
+	public void inserir(UsuarioDto dto) {
+	Usuario usuario = new Usuario(dto);
 	Usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
 	usuarioRepository.save(usuario);
 	}

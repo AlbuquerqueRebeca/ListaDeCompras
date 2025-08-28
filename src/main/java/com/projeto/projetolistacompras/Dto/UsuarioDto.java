@@ -2,7 +2,7 @@ package com.projeto.projetolistacompras.Dto;
 
 
 
-public class UserRegisterDto {
+public class UsuarioDto {
 	
 	
 	  
@@ -17,7 +17,7 @@ public class UserRegisterDto {
 		   return email; 
 	   }
 	   
-	   public void setEmail() {
+	   public void setEmail(String email) {
 		 this.email = email;
 	   }
 	   
@@ -34,7 +34,7 @@ public class UserRegisterDto {
 		   return login;
 		}
 	   
-	   public void setLogin() {
+	   public void setLogin(String login) {
 		 this.login = login;  
 	   }
 	   
@@ -42,7 +42,7 @@ public class UserRegisterDto {
 		   return senha;
 	   }
 	   
-	   public void setSenha() {
+	   public void setSenha(String senha) {
 		 this.senha = senha;
 	   }
 	   

@@ -8,8 +8,8 @@ public class AcessDto {
 	
 	
 	//constutor 
-	public UsuarioDto() {
-		
+	public UsuarioDto(Usuario usuario) {
+	
 	}
 	
 	

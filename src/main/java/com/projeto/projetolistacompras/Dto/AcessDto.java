@@ -9,10 +9,7 @@ public class AcessDto {
 	
 	
 	
-	//constutor 
-	public UsuarioDto(Usuario usuario) {
-	this.email = usuario.getEmail();
-	}
+	
 	
 	
 	

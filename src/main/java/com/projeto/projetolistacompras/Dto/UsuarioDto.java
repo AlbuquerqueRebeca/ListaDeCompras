@@ -1,6 +1,6 @@
 package com.projeto.projetolistacompras.Dto;
 
-
+import com.projeto.projetolistacompras.Entidade.Usuario;
 
 public class UsuarioDto {
 	
@@ -10,6 +10,12 @@ public class UsuarioDto {
 	   public String nome;
 	   public String login;
 	   public String senha;
+	   
+	   
+	   public UsuarioDto(Usuario usuario) {
+		this.email = usuario.getEmail();
+		this.nome = usuario.getNome();
+	   }
 	   
 	   
 	   

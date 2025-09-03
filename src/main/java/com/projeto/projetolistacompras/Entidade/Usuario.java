@@ -30,6 +30,12 @@ private String senha;
 private List<ListaDeCompras>listaDeCompras;
 
 
+//construtor padrão
+public Usuario() {
+	
+}
+
+
 
   public Usuario(UsuarioDto dto) {
 	  this.nome = dto.getNome();

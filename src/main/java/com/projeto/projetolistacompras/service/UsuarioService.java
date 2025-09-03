@@ -4,6 +4,8 @@ package com.projeto.projetolistacompras.service;
 
 
 
+import java.util.List;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +32,11 @@ public class UsuarioService{
 		
 	}
 	
+	public List<Usuario> listarTodos(){
+		return usuarioRepository.findAll();
+	}
+	
+	
 	public boolean validarSenha(String senhaDigitada, String senhaArmazenada) {
 		return passwordEncoder.matches(senhaDigitada, senhaArmazenada);
 		
@@ -46,7 +53,7 @@ public class UsuarioService{
 	
 	public void inserir(UsuarioDto dto) {
 	Usuario usuario = new Usuario(dto);
-	Usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
+	usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
 	usuarioRepository.save(usuario);
 	}
 	

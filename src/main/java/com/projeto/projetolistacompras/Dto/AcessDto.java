@@ -7,6 +7,13 @@ public class AcessDto {
 	
 	
 	
+	//constutor 
+	public UsuarioDto() {
+		
+	}
+	
+	
+	
 	public AcessDto(String token) {
 		super();
 		this.token = token;

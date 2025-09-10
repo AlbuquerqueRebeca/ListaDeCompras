@@ -1,5 +1,7 @@
 package com.projeto.projetolistacompras.Dto;
 
+import org.springframework.beans.BeanUtils;
+
 import com.projeto.projetolistacompras.Entidade.Usuario;
 
 public class UsuarioDto {
@@ -13,13 +15,13 @@ public class UsuarioDto {
 	   
 	   
 	   public UsuarioDto(Usuario usuario) {
-		this.email = usuario.getEmail();
-		this.nome = usuario.getNome();
-		this.login = usuario.getLogin();
-		this.senha = usuario.getSenha();
+		BeanUtils.copyProperties(usuario, this);
 	   }
 	   
 	   
+	   public UsuarioDto() {
+		   
+	   }
 	   
 	   public String getEmail() {
 		   return email; 

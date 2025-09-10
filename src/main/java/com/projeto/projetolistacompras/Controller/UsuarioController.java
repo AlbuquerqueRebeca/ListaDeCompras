@@ -2,9 +2,11 @@ package com.projeto.projetolistacompras.Controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,21 +32,30 @@ public class UsuarioController{
 	@Autowired
 	private UsuarioService usuarioService; 
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	
 	//Criando novo usuario
 	//Endpoint de criação de novo usuário
 	//Rota publica
 	@PostMapping("/criar-usuario")
 	public ResponseEntity<String> criarUsuario(@RequestBody Usuario usuario){
+     String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
+	 usuario.setSenha(senhaCriptografada);
      usuarioService.salvar(usuario);
      return  ResponseEntity.ok("Conta criada com Sucesso!!!");
 
 	}
 	
+	
+	
 	//endpoint temporario pra teste
 	@GetMapping("/listar-todos")
-	public List<Usuario>  listarTodos(){
+	public List<UsuarioDto>  listarTodos(){
 	return usuarioService.listarTodos();
+	
+	
 	}
 	
 	

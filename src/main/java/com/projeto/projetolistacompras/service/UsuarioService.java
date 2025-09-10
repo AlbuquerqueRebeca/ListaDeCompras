@@ -32,8 +32,9 @@ public class UsuarioService{
 		
 	}
 	
-	public List<Usuario> listarTodos(){
-		return usuarioRepository.findAll();
+	public List<UsuarioDto> listarTodos(){
+		List<Usuario> usuarios = usuarioRepository.findAll();
+		return usuarios.stream().map(UsuarioDto::new).toList();
 	}
 	
 	
@@ -52,9 +53,13 @@ public class UsuarioService{
 	
 	
 	public void inserir(UsuarioDto dto) {
+    System.out.println("DTO senha:" + dto.getSenha());
 	Usuario usuario = new Usuario(dto);
+	System.out.println("senha antes da criptografia" + usuario.getSenha());
 	usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
 	usuarioRepository.save(usuario);
+	System.out.println("senha criptografada" + usuario.getSenha());
+	
 	}
 	
 	

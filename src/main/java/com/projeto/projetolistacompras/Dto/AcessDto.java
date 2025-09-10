@@ -1,6 +1,6 @@
 package com.projeto.projetolistacompras.Dto;
 
-import com.projeto.projetolistacompras.Entidade.Usuario;
+
 
 public class AcessDto {
 	

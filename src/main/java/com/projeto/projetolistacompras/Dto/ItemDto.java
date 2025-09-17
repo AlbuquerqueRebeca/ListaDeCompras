@@ -5,5 +5,6 @@ public class ItemDto {
 	
 	
 	private String nome;
+	private int quantidade;
 
 }

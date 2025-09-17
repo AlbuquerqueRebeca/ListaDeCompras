@@ -41,7 +41,7 @@ public class UsuarioController{
 	//Rota publica
 	@PostMapping("/criar-usuario")
 	public ResponseEntity<String> criarUsuario(@RequestBody Usuario usuario){
-     String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
+     String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());  //criptografando a senha antes de salvar o usuario
 	 usuario.setSenha(senhaCriptografada);
      usuarioService.salvar(usuario);
      return  ResponseEntity.ok("Conta criada com Sucesso!!!");

@@ -22,16 +22,19 @@ import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.ListaDeComprasService;
 
 @RestController
-@RequestMapping("/listas")
+@RequestMapping("/auth")
 public class ListaDeComprasController {
 
+	
+	
 	@Autowired
 	private ListaDeComprasService listaDeComprasService;
 	
+	
+	
+	
 	@Autowired	
 	private UsuarioRepository usuarioRepository;
-	
-	
 	
 	
 	
@@ -42,7 +45,7 @@ public class ListaDeComprasController {
 	@PostMapping("/criar-lista")
 	public ResponseEntity<String> criarListaNova(@RequestBody ListaDeCompras lista){
 		listaDeComprasService.salvar(lista);
-		return ResponseEntity.status(HttpStatus.CREATED).body("Lista criada com Sucesso!!");
+		return ResponseEntity.status(HttpStatus.CREATED).body("Lista criada com Sucesso!! Boas compras");
 		}
 	
 	

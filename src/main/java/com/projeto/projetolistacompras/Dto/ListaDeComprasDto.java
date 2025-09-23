@@ -5,7 +5,7 @@ import java.util.List;
 public class ListaDeComprasDto {
 	
 	private String nome;
-	private String descriçao;
+	private String descricao;
 	private List<ItemDto> itens;
 	
 	
@@ -22,10 +22,10 @@ public class ListaDeComprasDto {
 		this.nome = nome;
 	}
 	public String getDescriçao() {
-		return descriçao;
+		return descricao;
 	}
 	public void setDescriçao(String descriçao) {
-		this.descriçao = descriçao;
+		this.descricao = descriçao;
 	}
 	public List<ItemDto> getItens() {
 		return itens;

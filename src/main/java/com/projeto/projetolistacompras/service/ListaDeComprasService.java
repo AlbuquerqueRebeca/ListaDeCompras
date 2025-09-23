@@ -60,5 +60,11 @@ public class ListaDeComprasService {
 		listaDeComprasRepository.save(lista);
 		
 	}
+	
+	 private ListaDeCompras converterDtoParaEntidade(ListaDeCompras dto) {
+		 
+	 }
+	
+	
 
 }

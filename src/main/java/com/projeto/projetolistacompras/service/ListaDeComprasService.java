@@ -1,6 +1,7 @@
 package com.projeto.projetolistacompras.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -61,10 +62,28 @@ public class ListaDeComprasService {
 		
 	}
 	
-	 private ListaDeCompras converterDtoParaEntidade(ListaDeCompras dto) {
-		 
+	private ListaDeCompras converterDtoParaEntidade(ListaDeComprasDto dto) {
+	    ListaDeCompras lista = new ListaDeCompras();
+
+	    // Corrigido: nomeLista é o campo da entidade
+	    lista.setNomeLista(dto.getNome());
+
+	    // Corrigido: extrai os nomes dos itens do DTO
+	    List<String> nomesDosItens = dto.getItens().stream()
+	        .map(itemDto -> itemDto.getNome()) // sem chave extra, com parênteses corretos
+	        .collect(Collectors.toList());
+
+	    lista.setItens(nomesDosItens);
+
+	    return lista;
+	}
+	
+	        
+	        
+	        
+	    
 	 }
 	
 	
 
-}
+

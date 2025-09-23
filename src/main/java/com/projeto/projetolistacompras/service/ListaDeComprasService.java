@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.projeto.projetolistacompras.Dto.ListaDeComprasDto;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
+import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.ListaDeComprasRepository;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 
@@ -47,6 +49,16 @@ public class ListaDeComprasService {
 
 	public ListaDeCompras editar(ListaDeCompras listaAtualizada) {
 		return listaDeComprasRepository.save(listaAtualizada);
+	}
+	
+	public void salvarDto(ListaDeComprasDto dto, String email) {
+		ListaDeCompras lista = converterDtoParaEntidade(dto);
+		Usuario usuario = usuarioRepository.findByEmail(email)
+			.orElseThrow(() -> new RuntimeException("Usuario não encontrado"));	
+		   
+		lista.setUsuario(usuario);
+		listaDeComprasRepository.save(lista);
+		
 	}
 
 }

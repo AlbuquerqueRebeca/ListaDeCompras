@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.projeto.projetolistacompras.Dto.ListaDeComprasDto;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
@@ -59,9 +60,10 @@ public class ListaDeComprasController {
 	
 	//Editar lista 
 	@PutMapping("/editar-lista")
-	public ResponseEntity<ListaDeCompras> editarListas(@RequestBody ListaDeCompras listaAtualizada){
-	ListaDeCompras	listaEditada = listaDeComprasService.editar(listaAtualizada);
-		return ResponseEntity.ok(listaEditada);		
+	public ResponseEntity<String> editarListas(@RequestBody ListaDeComprasDto listaDto){
+	ListaDeCompras	lista = converterDtoParaEntidade(listaDto);
+	listaDeComprasService.salvar(lista);	
+	return ResponseEntity.status(HttpStatus.CREATED).body("Lista criada com sucesso!! Boas compras");		
 	}
 	
 	//Excluir lista

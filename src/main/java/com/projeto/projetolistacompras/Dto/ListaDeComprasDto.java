@@ -21,11 +21,11 @@ public class ListaDeComprasDto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getDescriçao() {
+	public String getDescricao() {
 		return descricao;
 	}
-	public void setDescriçao(String descriçao) {
-		this.descricao = descriçao;
+	public void setDescricao(String descriçao) {
+		this.descricao = descricao;
 	}
 	public List<ItemDto> getItens() {
 		return itens;

@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.projeto.projetolistacompras.Dto.ItemDto;
 import com.projeto.projetolistacompras.Dto.ListaDeComprasDto;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Entidade.Usuario;
@@ -65,17 +66,30 @@ public class ListaDeComprasService {
 	private ListaDeCompras converterDtoParaEntidade(ListaDeComprasDto dto) {
 	    ListaDeCompras lista = new ListaDeCompras();
 
-	    // Corrigido: nomeLista é o campo da entidade
+	    
 	    lista.setNomeLista(dto.getNome());
 
-	    // Corrigido: extrai os nomes dos itens do DTO
+	   
 	    List<String> nomesDosItens = dto.getItens().stream()
-	        .map(itemDto -> itemDto.getNome()) // sem chave extra, com parênteses corretos
+	        .map(itemDto -> itemDto.getNome()) 
 	        .collect(Collectors.toList());
 
 	    lista.setItens(nomesDosItens);
 
 	    return lista;
+	}
+	
+	public void editarDto(ListaDeComprasDto dto, String email) {
+	    ListaDeCompras lista = listaDeComprasRepository.findByNomeLista(dto.getNome())
+	        .orElseThrow(() -> new RuntimeException("Lista não encontrada"));
+
+	    List<String> nomesDosItens = dto.getItens().stream()
+	        .map(ItemDto::getNome)
+	        .collect(Collectors.toList());
+
+	    lista.setItens(nomesDosItens);
+
+	    listaDeComprasRepository.save(lista);
 	}
 	
 	        

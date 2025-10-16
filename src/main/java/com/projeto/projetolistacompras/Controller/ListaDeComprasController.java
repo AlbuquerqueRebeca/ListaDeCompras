@@ -60,10 +60,10 @@ public class ListaDeComprasController {
 	
 	//Editar lista 
 	@PutMapping("/editar-lista")
-	public ResponseEntity<String> editarListas(@RequestBody ListaDeComprasDto listaDto){
-	ListaDeCompras	lista = converterDtoParaEntidade(listaDto);
-	listaDeComprasService.salvar(lista);	
-	return ResponseEntity.status(HttpStatus.CREATED).body("Lista criada com sucesso!! Boas compras");		
+	public ResponseEntity<String> editarListas(@RequestBody ListaDeComprasDto listaDto, @RequestParam String email){
+	
+	listaDeComprasService.editarDto(listaDto, email);	
+	return ResponseEntity.ok("Lista editada com sucesso!!");		
 	}
 	
 	//Excluir lista

@@ -21,6 +21,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class AuthFilterToken extends OncePerRequestFilter{
 	
 	
+	
+	
 	   
 	  @Autowired
 	  private JwtUtil jwtUtil;
@@ -44,22 +46,24 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            	String jwt = getToken(request);
 		            	System.out.println("Token recebido" + jwt);
 		            	if(jwt != null && jwtUtil.validateJwtToken(jwt)) {
-		            		
+		            		System.out.println("TOKEN VALIDO COM SUCESSO"); // log 
 		            		      String username = jwtUtil.getUsernameToken(jwt);
-		            		      System.out.println("Username extraido do Token" + username);
+		            		      System.out.println("Username EXTRAIDO do Token" + username);  //log 
 		            		      
 		            		      
 		            		      UserDetails userDetails = userDetailService.loadUserByUsername(username);
-		            	          System.out.println("Detalhes de usuário carregados" + userDetails);
+		            	          System.out.println("Detalhes de usuário carregados" + userDetails); //log
 		            	         UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 		            	            auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 		            	             
 		            	                 SecurityContextHolder.getContext().setAuthentication(auth);
 		            	
+		            	            }else {
+		            	            	System.out.println("TOKEN INVALIDO OU AUSENTE");  // log 
 		            	            }
 		            	
 		                         }catch(Exception e) {
-		                        	 System.out.println("Ocorreu um erro ao processar o token");
+		                        	 System.out.println("Ocorreu um erro ao processar o token"); // log
 		                        	 
 		                         }finally {
 		                         

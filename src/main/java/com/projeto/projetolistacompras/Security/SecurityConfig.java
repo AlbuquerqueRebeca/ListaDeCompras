@@ -60,7 +60,7 @@ public class SecurityConfig {
 		                             http.csrf(csrf -> csrf.disable())
 		                              .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
 		                              .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-		                              .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/login").permitAll()		                              
+		                              .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/login").permitAll()                              
 		                              .requestMatchers("/api/criar-usuario").permitAll()
 		                              
 		                              .anyRequest().authenticated()

@@ -17,6 +17,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.projeto.projetolistacompras.Jwt.AuthEntrypointJwt;
 import com.projeto.projetolistacompras.Jwt.AuthFilterToken;
+import com.projeto.projetolistacompras.Jwt.JwtUtil;
+import com.projeto.projetolistacompras.service.UsuarioDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -42,14 +44,14 @@ public class SecurityConfig {
 	}
 	
 	@Bean
-	public AuthFilterToken authFilterToken() {
-		return new AuthFilterToken();
+	public AuthFilterToken authFilterToken(JwtUtil jwtUtil, UsuarioDetailsServiceImpl userDetailService) {
+		return new AuthFilterToken(jwtUtil, userDetailService);
 	}
 	
 	
 	
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+	public SecurityFilterChain filterChain(HttpSecurity http, AuthFilterToken authFilterToken) throws Exception{
 		
 		
 		
@@ -67,7 +69,7 @@ public class SecurityConfig {
 		                              );
 		                              
 		
-		                      http.addFilterBefore(authFilterToken(), UsernamePasswordAuthenticationFilter.class);
+		                      http.addFilterBefore(authFilterToken, UsernamePasswordAuthenticationFilter.class);
 		                       return http.build();
 		                              
 		

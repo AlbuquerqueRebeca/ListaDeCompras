@@ -24,7 +24,7 @@ public class ListaDeComprasDto {
 	public String getDescricao() {
 		return descricao;
 	}
-	public void setDescricao(String descriçao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 	public List<ItemDto> getItens() {

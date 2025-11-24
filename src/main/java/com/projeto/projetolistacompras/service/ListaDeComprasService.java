@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.projeto.projetolistacompras.Dto.ItemDto;
 import com.projeto.projetolistacompras.Dto.ListaDeComprasDto;
+import com.projeto.projetolistacompras.Entidade.Item;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.ListaDeComprasRepository;
@@ -67,10 +68,10 @@ public class ListaDeComprasService {
 	    ListaDeCompras lista = new ListaDeCompras();
 
 	    
-	    lista.setNomeLista(dto.getNome());
+	    lista.setNome(dto.getNome());
 
 	   
-	    List<String> nomesDosItens = dto.getItens().stream()
+	    List<Item> nomesDosItens = dto.getItens().stream()
 	        .map(itemDto -> itemDto.getNome()) 
 	        .collect(Collectors.toList());
 

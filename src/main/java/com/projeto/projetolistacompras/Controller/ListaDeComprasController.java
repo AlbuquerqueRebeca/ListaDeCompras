@@ -2,7 +2,9 @@ package com.projeto.projetolistacompras.Controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
+import com.projeto.projetolistacompras.Entidade.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,12 +46,29 @@ public class ListaDeComprasController {
 	
 	//criando uma lista nova
 	@PostMapping("/criar-lista")
-	public ResponseEntity<String> criarListaNova(@RequestBody ListaDeCompras lista){
+	public ResponseEntity<String> criarListaNova(@RequestBody ListaDeComprasDto listaDto){
+		ListaDeCompras lista = converterDtoParaEntidade(listaDto);
 		listaDeComprasService.salvar(lista);
 		return ResponseEntity.status(HttpStatus.CREATED).body("Lista criada com Sucesso!! Boas compras");
 		}
 	
-	
+	private ListaDeCompras converterDtoParaEntidade(ListaDeComprasDto dto) {
+	    ListaDeCompras lista = new ListaDeCompras();
+	    lista.setNome(dto.getNome());
+	    lista.setDescricao(dto.getDescricao());
+
+	    List<Item> itensConvertidos = dto.getItens().stream() 
+	    	    .map(itemDto -> {
+	    	        Item item = new Item();
+	    	        item.setNome(itemDto.getNome());
+	    	        item.setQuantidade(itemDto.getQuantidade());
+	    	        return item;
+	    	    })
+	    	    .collect(Collectors.toList());
+
+	    	lista.setItens(itensConvertidos);
+	    
+			}
 	//Buscando lista por email
 	@GetMapping("/buscar/{email}")
 	public ResponseEntity<List<ListaDeCompras>> buscarPorEmail(@PathVariable String email){

@@ -19,14 +19,17 @@ public class ListaDeCompras {
 private long id;
 
 
-private String nomeLista; 
+private String nome; 
+private String descricao;
+
+
 
 @ManyToOne
 @JoinColumn(name = "usuario_id") 
 private Usuario usuario; 
 
 @ElementCollection 
-private List<String>itens;
+private List<Item>itens;
 
 
 
@@ -41,12 +44,12 @@ public void setId(long id) {
 	this.id = id;
 }
 
-public String getNomeLista() {
-	return nomeLista;
+public String getNome() {
+	return nome;
 }
 
-public void setNomeLista(String nomeLista) {
-	this.nomeLista = nomeLista;
+public void setNome(String nomeLista) {
+	this.nome = nomeLista;
 }
 
 public Usuario getUsuario() {
@@ -57,15 +60,23 @@ public void setUsuario(Usuario usuario) {
 	this.usuario = usuario;
 }
 
-public List<String> getItens(){
+public String getDescricao() {
+	return descricao;
+}
+
+public void setDescricao(String descricao) {
+	this.descricao = descricao;
+}
+
+public List<Item> getItens() {
 	return itens;
 }
-	
 
-
-public void setItens(List<String> itens) {
+public void setItens(List<Item> itens) {
 	this.itens = itens;
-} 
+}
+
+
 
 
 

@@ -26,7 +26,10 @@ public class RecommendationService {
      Map<String, Long> frequencia = itens.stream()
      .collect(Collectors.groupingBy(Item::getNome, Collectors.counting()));
      
-     
+     return frequencia.entrySet().stream()
+        .filter(e -> e.getValue() > 2 )
+        .map(Map.Entry::getKey)
+        .collect(Collectors.toList());
      
     }
 

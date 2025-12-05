@@ -98,5 +98,7 @@ public class ListaDeComprasController {
 
 }
    @GetMapping("/sugestaoes/{email}")
-   public ResponseEntity<List<String>> obterSugestoes
+   public ResponseEntity<List<String>> obterSugestoes(@PathVariable String email) {
+	
+   }
 

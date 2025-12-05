@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import com.projeto.projetolistacompras.service.UsuarioDetailsImpl;
 
-import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
@@ -61,7 +60,7 @@ public class JwtUtil {
 	public boolean validateJwtToken(String authToken) {
 		try {
 			System.out.println("validando Token" + authToken);
-			Claims claims = Jwts
+			Jwts
 					         .parserBuilder()
 					         .setSigningKey(getSigninKey())
 					         .build()

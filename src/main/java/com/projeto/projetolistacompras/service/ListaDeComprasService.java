@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.projeto.projetolistacompras.Dto.ItemDto;
 import com.projeto.projetolistacompras.Dto.ListaDeComprasDto;
 import com.projeto.projetolistacompras.Entidade.Item;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
@@ -38,6 +37,7 @@ public class ListaDeComprasService {
 		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}
 	
+	@SuppressWarnings("null")
 	public void excluirLista(Long listaId) {
 		listaDeComprasRepository.deleteById(listaId);
 	}
@@ -46,10 +46,12 @@ public class ListaDeComprasService {
 		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}
 	
+	@SuppressWarnings("null")
 	public void salvar(ListaDeCompras lista) {
 		listaDeComprasRepository.save(lista);
 	}
 
+	@SuppressWarnings("null")
 	public ListaDeCompras editar(ListaDeCompras listaAtualizada) {
 		return listaDeComprasRepository.save(listaAtualizada);
 	}
@@ -71,24 +73,34 @@ public class ListaDeComprasService {
 	    lista.setNome(dto.getNome());
 
 	   
-	    List<Item> nomesDosItens = dto.getItens().stream()
-	        .map(itemDto -> itemDto.getNome()) 
-	        .collect(Collectors.toList());
+		List<Item> itensConvertidos = dto.getItens().stream()
+			.map(itemDto -> {
+				Item item = new Item();
+				item.setNome(itemDto.getNome());
+				item.setQuantidade(itemDto.getQuantidade());
+				return item;
+			})
+			.collect(Collectors.toList());
 
-	    lista.setItens(nomesDosItens);
+		lista.setItens(itensConvertidos);
 
 	    return lista;
 	}
 	
 	public void editarDto(ListaDeComprasDto dto, String email) {
-	    ListaDeCompras lista = listaDeComprasRepository.findByNomeLista(dto.getNome())
+	    ListaDeCompras lista = listaDeComprasRepository.findByNome(dto.getNome())
 	        .orElseThrow(() -> new RuntimeException("Lista não encontrada"));
 
-	    List<String> nomesDosItens = dto.getItens().stream()
-	        .map(ItemDto::getNome)
-	        .collect(Collectors.toList());
+		List<Item> itensConvertidos = dto.getItens().stream()
+			.map(itemDto -> {
+				Item item = new Item();
+				item.setNome(itemDto.getNome());
+				item.setQuantidade(itemDto.getQuantidade());
+				return item;
+			})
+			.collect(Collectors.toList());
 
-	    lista.setItens(nomesDosItens);
+		lista.setItens(itensConvertidos);
 
 	    listaDeComprasRepository.save(lista);
 	}

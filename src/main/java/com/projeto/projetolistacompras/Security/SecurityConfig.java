@@ -62,11 +62,13 @@ public class SecurityConfig {
 		                             http.csrf(csrf -> csrf.disable())
 		                              .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
 		                              .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-		                              .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/login").permitAll()                              
-		                              .requestMatchers("/api/criar-usuario").permitAll()
-		                              
-		                              .anyRequest().authenticated()
-		                              );
+									      .authorizeHttpRequests(auth -> auth
+											      .requestMatchers(
+												      "/auth/login",
+												      "/api/criar-usuario"
+											      ).permitAll()
+										      .anyRequest().authenticated()
+									      );
 		                              
 		
 		                      http.addFilterBefore(authFilterToken, UsernamePasswordAuthenticationFilter.class);

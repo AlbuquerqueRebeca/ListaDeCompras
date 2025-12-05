@@ -12,6 +12,8 @@ public class RecommendationService {
     this.listaDeComprasRepository = listaDeComprasRepository; 
     }
 
-    public List<String> sugerirItens()
+    public List<String> sugerirItens(String email) {
+
+    }
 
 }

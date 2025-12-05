@@ -98,4 +98,5 @@ public class ListaDeComprasController {
 
 }
    @GetMapping("/sugestaoes/{email}")
-   
+   public ResponseEntity<List<String>> obterSugestoes
+

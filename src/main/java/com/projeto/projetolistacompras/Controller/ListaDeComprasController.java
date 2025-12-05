@@ -100,5 +100,6 @@ public class ListaDeComprasController {
    @GetMapping("/sugestaoes/{email}")
    public ResponseEntity<List<String>> obterSugestoes(@PathVariable String email) {
 	List<String> sugestoes = recommendationService.sugerirItens(email);
+	return ResponseEntity.ok(sugestoes);
    }
 

@@ -97,3 +97,5 @@ public class ListaDeComprasController {
 	}
 
 }
+   @GetMapping("/sugestaoes/{email}")
+   

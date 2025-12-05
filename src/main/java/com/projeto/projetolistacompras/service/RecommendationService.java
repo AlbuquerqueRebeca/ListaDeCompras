@@ -21,6 +21,13 @@ public class RecommendationService {
     List<Item> historicoItens = historico.stream() 
         .flatMap(lista -> lista.getItens().stream())
         .collect(Collectors.toList());
+
+
+     Map<String, Long> frequencia = itens.stream()
+     .collect(Collectors.groupingBy(Item::getNome, Collectors.counting()));
+     
+     
+     
     }
 
 }

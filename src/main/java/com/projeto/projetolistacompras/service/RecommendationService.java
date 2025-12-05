@@ -2,6 +2,7 @@ package com.projeto.projetolistacompras.service;
 
 import java.util.List;
 
+import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Repository.ListaDeComprasRepository;
 
 public class RecommendationService {
@@ -13,7 +14,7 @@ public class RecommendationService {
     }
 
     public List<String> sugerirItens(String email) {
-
+    List<ListaDeCompras> historico = listaDeComprasRepository.findByUsuarioEmail(email);
     }
 
 }

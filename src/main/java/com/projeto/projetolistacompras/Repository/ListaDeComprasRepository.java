@@ -11,5 +11,5 @@ public interface ListaDeComprasRepository extends JpaRepository<ListaDeCompras, 
    
 	List<ListaDeCompras> findByUsuarioEmail(String email); 
 	
-	Optional<ListaDeCompras> findByNomeLista(String nomeLista);
+	Optional<ListaDeCompras> findByNome(String nome);
 }

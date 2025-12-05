@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.projeto.projetolistacompras.Entidade.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.projetolistacompras.Dto.ListaDeComprasDto;
+import com.projeto.projetolistacompras.Entidade.Item;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
@@ -67,8 +67,8 @@ public class ListaDeComprasController {
 	    	    .collect(Collectors.toList());
 
 	    	lista.setItens(itensConvertidos);
-	    
-			}
+	    	return lista;
+	}
 	//Buscando lista por email
 	@GetMapping("/buscar/{email}")
 	public ResponseEntity<List<ListaDeCompras>> buscarPorEmail(@PathVariable String email){
@@ -86,6 +86,7 @@ public class ListaDeComprasController {
 	}
 	
 	//Excluir lista
+	@SuppressWarnings("null")
 	@DeleteMapping("/deletar-lista")
 	public ResponseEntity<String> excluindoLista(@RequestParam String email){
 		Optional<Usuario> apagarLista = usuarioRepository.findById(email);

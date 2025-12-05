@@ -89,4 +89,12 @@ public class UsuarioDetailsImpl implements UserDetails{
         	       return true;
          }
          
+         public String getEmail() {
+             return email;
+         }
+         
+         public String getNome() {
+             return nome;
+         }
+         
 }

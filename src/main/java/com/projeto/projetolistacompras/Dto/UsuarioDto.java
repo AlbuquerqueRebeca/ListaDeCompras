@@ -14,8 +14,9 @@ public class UsuarioDto {
 	   public String senha;
 	   
 	   
+	   @SuppressWarnings("null")
 	   public UsuarioDto(Usuario usuario) {
-		BeanUtils.copyProperties(usuario, this);
+		BeanUtils.copyProperties((Object) usuario, this);
 	   }
 	   
 	   

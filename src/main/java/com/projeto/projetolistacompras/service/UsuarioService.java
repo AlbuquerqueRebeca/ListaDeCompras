@@ -27,6 +27,7 @@ public class UsuarioService{
 		
 	}
 	
+	@SuppressWarnings("null")
 	public Usuario criarUsuario(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 		
@@ -43,10 +44,12 @@ public class UsuarioService{
 		
 	}
 	
+	@SuppressWarnings("null")
 	public void excluirUsuario(String  email) { 
 		usuarioRepository.deleteById(email); 
 	}
 	
+	@SuppressWarnings("null")
 	public void salvar(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}

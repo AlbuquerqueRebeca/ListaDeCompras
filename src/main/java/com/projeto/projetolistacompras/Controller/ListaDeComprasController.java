@@ -23,6 +23,7 @@ import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.ListaDeComprasService;
+import com.projeto.projetolistacompras.service.RecommendationService;
 
 @RestController
 @RequestMapping("/auth")
@@ -33,13 +34,11 @@ public class ListaDeComprasController {
 	@Autowired
 	private ListaDeComprasService listaDeComprasService;
 	
-	
-	
-	
 	@Autowired	
 	private UsuarioRepository usuarioRepository;
 	
-	
+	@Autowired
+	private RecommendationService recommendationService;
 	
 	
 	

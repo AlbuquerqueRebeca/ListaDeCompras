@@ -6,4 +6,8 @@ public class RecommendationService {
 
     private final ListaDeComprasRepository listaDeComprasRepository; 
 
+    public RecommendationService(ListaDeComprasRepository listaDeComprasRepository) {
+        
+    }
+
 }

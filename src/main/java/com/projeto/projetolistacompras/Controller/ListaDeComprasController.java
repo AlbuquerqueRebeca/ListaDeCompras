@@ -103,3 +103,4 @@ public class ListaDeComprasController {
 	return ResponseEntity.ok(sugestoes);
    }
 
+}

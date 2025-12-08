@@ -4,10 +4,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import com.projeto.projetolistacompras.Entidade.Item;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Repository.ListaDeComprasRepository;
 
+@Service
 public class RecommendationService {
 
     private final ListaDeComprasRepository listaDeComprasRepository; 

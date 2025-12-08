@@ -1,8 +1,10 @@
 package com.projeto.projetolistacompras.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.projeto.projetolistacompras.Entidade.Item;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Repository.ListaDeComprasRepository;
 
@@ -13,16 +15,16 @@ public class RecommendationService {
     public RecommendationService(ListaDeComprasRepository listaDeComprasRepository) {
     this.listaDeComprasRepository = listaDeComprasRepository; 
     }
-
+    //busca todas as listas
     public List<String> sugerirItens(String email) {
     List<ListaDeCompras> historico = listaDeComprasRepository.findByUsuarioEmail(email);   
       
-
-    List<Item> historicoItens = historico.stream() 
+   //extrai todos os itens
+    List<Item> itens = historico.stream() 
         .flatMap(lista -> lista.getItens().stream())
         .collect(Collectors.toList());
 
-
+     //conta a frequencia de itens
      Map<String, Long> frequencia = itens.stream()
      .collect(Collectors.groupingBy(Item::getNome, Collectors.counting()));
      

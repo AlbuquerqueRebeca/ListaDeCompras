@@ -31,7 +31,7 @@ public class JwtUtil {
 	//Gerando token JWT contendo username de usuario autenticado
 	public String generateTokenFromUserDetailsImpl(UsuarioDetailsImpl userDetail) {
 		System.out.println("Gerando token para Usuário" + userDetail.getUsername());
-	    return Jwts.builder().setSubject(userDetail.getUsername())
+	    return Jwts.builder().setSubject(userDetail.getEmail())
 	    		                    .setIssuedAt(new Date())
 	    		                    .setExpiration(new Date(new Date().getTime() + jwtExpirationMs))   		                   
 	    		                    .signWith(getSigninKey(), SignatureAlgorithm.HS512).compact();

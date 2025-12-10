@@ -44,11 +44,12 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            	System.out.println("Token recebido" + jwt);
 		            	if(jwt != null && jwtUtil.validateJwtToken(jwt)) {
 		            		System.out.println("TOKEN VALIDO COM SUCESSO"); // log 
-		            		      String username = jwtUtil.getEmail(jwt);
-		            		      System.out.println("Username EXTRAIDO do Token" + email);  //log 
+		            		      String email = jwtUtil.getEmailToken(jwt);
+		            		      System.out.println("Username EXTRAIDO do Token" + email);
+								  
 		            		      
 		            		      
-		            		      UserDetails userDetails = userDetailService.loadUserByUsername(username);
+		            		      UserDetails userDetails = userDetailService.loadUserByUsername(email);
 		            	          System.out.println("Detalhes de usuário carregados" + userDetails); //log
 		            	         UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 		            	            auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));

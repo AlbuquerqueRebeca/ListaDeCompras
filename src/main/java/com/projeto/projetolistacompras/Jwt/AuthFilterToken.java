@@ -2,17 +2,15 @@ package com.projeto.projetolistacompras.Jwt;
 
 import java.io.IOException;
 
-
+import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-import org.springframework.lang.NonNull;
 
 import com.projeto.projetolistacompras.service.UsuarioDetailsServiceImpl;
-
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -46,8 +44,8 @@ public class AuthFilterToken extends OncePerRequestFilter{
 		            	System.out.println("Token recebido" + jwt);
 		            	if(jwt != null && jwtUtil.validateJwtToken(jwt)) {
 		            		System.out.println("TOKEN VALIDO COM SUCESSO"); // log 
-		            		      String username = jwtUtil.getUsernameToken(jwt);
-		            		      System.out.println("Username EXTRAIDO do Token" + username);  //log 
+		            		      String username = jwtUtil.getEmail(jwt);
+		            		      System.out.println("Username EXTRAIDO do Token" + email);  //log 
 		            		      
 		            		      
 		            		      UserDetails userDetails = userDetailService.loadUserByUsername(username);

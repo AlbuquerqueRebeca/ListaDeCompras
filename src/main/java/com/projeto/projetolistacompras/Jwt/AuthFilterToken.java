@@ -49,7 +49,7 @@ public class AuthFilterToken extends OncePerRequestFilter{
 								  
 		            		      
 		            		      
-		            		      UserDetails userDetails = userDetailService.loadUserByUsername(email);
+		            		      UserDetails userDetails = userDetailService.loadUserByEmail(email);
 		            	          System.out.println("Detalhes de usuário carregados" + userDetails); //log
 		            	         UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 		            	            auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));

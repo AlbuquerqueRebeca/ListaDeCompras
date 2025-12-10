@@ -30,7 +30,7 @@ public class JwtUtil {
 	
 	//Gerando token JWT contendo username de usuario autenticado
 	public String generateTokenFromUserDetailsImpl(UsuarioDetailsImpl userDetail) {
-		System.out.println("Gerando token para Usuário" + userDetail.getUsername());
+		System.out.println("Gerando token para Usuário" + userDetail.getEmail());
 	    return Jwts.builder().setSubject(userDetail.getEmail())
 	    		                    .setIssuedAt(new Date())
 	    		                    .setExpiration(new Date(new Date().getTime() + jwtExpirationMs))   		                   
@@ -46,9 +46,9 @@ public class JwtUtil {
 	}
 	
 	
-	// Extraindo o subject (username) do token
-	public String getUsernameToken(String token) {
-		System.out.println("Extraindo username do token" + token);
+	// Extraindo o subject (email) do token
+	public String getEmailToken(String token) {
+		System.out.println("Extraindo email do token" + token);
 		return Jwts.parserBuilder()
 				            .setSigningKey(getSigninKey())
 				            .build()

@@ -9,13 +9,16 @@ public class ListaDeComprasDto {
 	private List<ItemDto> itens;
 	
 	
-	
+	public ListaDeComprasDto(){
+		
+	}
 	
 	
 	
 	///getters e setters
 	
 	public String getNome() {
+
 		return nome;
 	}
 	public void setNome(String nome) {

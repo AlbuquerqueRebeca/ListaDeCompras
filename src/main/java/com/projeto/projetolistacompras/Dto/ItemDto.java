@@ -8,7 +8,9 @@ public class ItemDto {
 	private int quantidade;
 	
 	
-	
+	public ItemDto(){
+		
+	}
 	
 	
 	//Getters e Setters

@@ -13,6 +13,8 @@ import com.projeto.projetolistacompras.Dto.UsuarioDto;
 import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class UsuarioService{
 	
@@ -44,7 +46,7 @@ public class UsuarioService{
 		
 	}
 	
-	@SuppressWarnings("null")
+	@Transactional
 	public void excluirUsuario(String  email) { 
 		usuarioRepository.deleteById(email); 
 	}

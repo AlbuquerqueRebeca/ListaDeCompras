@@ -68,7 +68,7 @@ public class UsuarioController{
 				   .getAuthentication()
 				   .getPrincipal();
 
-			
+			String email = userDetails.getUsername();
 		}
 	
 	  

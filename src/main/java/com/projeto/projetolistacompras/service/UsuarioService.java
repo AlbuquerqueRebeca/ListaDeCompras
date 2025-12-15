@@ -47,8 +47,8 @@ public class UsuarioService{
 	}
 	
 	@Transactional
-	public void excluirUsuario(String  email) { 
-		usuarioRepository.deleteById(email); 
+	public void excluirUsuario(String email){ 
+		Usuario usuario = usuarioRepository.findByEmail(email); 
 	}
 	
 	@SuppressWarnings("null")

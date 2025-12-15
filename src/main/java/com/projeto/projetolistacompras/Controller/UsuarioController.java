@@ -1,10 +1,11 @@
 package com.projeto.projetolistacompras.Controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,7 +48,7 @@ public class UsuarioController{
 	
 	
 	
-	//endpoint temporario pra teste
+	//endpoint temporario pra teste //
 	@GetMapping("/listar-todos")
 	public List<UsuarioDto>  listarTodos(){
 	return usuarioService.listarTodos();
@@ -59,15 +60,15 @@ public class UsuarioController{
 	
 	//Excluir Usuário
 	//Endpoint para excluir usuario atráves do email
-	@SuppressWarnings("null")
+	
 	@DeleteMapping("/deletar-perfil")
-	public ResponseEntity<String>  excluirUsuario(String email){
-	Optional<Usuario> apagarPerfil = usuarioRepository.findByEmail(email);
-	if(apagarPerfil.isPresent()) {
-		usuarioRepository.delete(apagarPerfil.get());
-		return ResponseEntity.ok("Perfil deletado com Sucesso!!!");
-		}else {
-			return ResponseEntity.notFound().build();
+	public ResponseEntity<String>  excluirUsuario(){
+	   UserDetails userDetails = (UserDetails) SecurityContextHolder
+	               .getContext()
+				   .getAuthentication()
+				   .getPrincipal();
+
+			
 		}
 	
 	  

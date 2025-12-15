@@ -70,6 +70,8 @@ public class UsuarioController{
 
 			String email = userDetails.getUsername();
 			UsuarioService.excluirUsuario(email);
+
+			return ResponseEntity.ok("Usuario deletado com sucesso!!");
 		}
 	
 	  

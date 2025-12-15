@@ -69,6 +69,7 @@ public class UsuarioController{
 				   .getPrincipal();
 
 			String email = userDetails.getUsername();
+			UsuarioService.excluirUsuario(email);
 		}
 	
 	  

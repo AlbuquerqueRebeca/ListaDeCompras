@@ -92,6 +92,9 @@ public class ListaDeComprasController {
 			                   .getContext()
 							   .getAuthentication()
 							   .getPrincipal();
+
+				String email = userDetails.getUsername();
+				usuarioService.excluirLista(email);			   
 							
 							
 	}

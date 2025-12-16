@@ -13,6 +13,7 @@ import com.projeto.projetolistacompras.Dto.UsuarioDto;
 import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -48,12 +49,16 @@ public class UsuarioService{
 	
 	@Transactional
 	public void excluirUsuario(String email){ 
-		Usuario usuario = usuarioRepository.findByEmail(email); 
+		if(!usuarioRepository.existsById(email)) {
+			throw new EntityNotFoundException("Usuario não encontrado com esse email:  " + email);
+		}
+		usuarioRepository.deleteById(email);
 	}
 	
 	@SuppressWarnings("null")
 	public void salvar(Usuario usuario) {
 		usuarioRepository.save(usuario);
+
 	}
 	
 	

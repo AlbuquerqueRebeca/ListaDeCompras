@@ -23,6 +23,7 @@ import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.ListaDeComprasService;
 import com.projeto.projetolistacompras.service.RecommendationService;
+import com.projeto.projetolistacompras.service.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")
@@ -39,7 +40,8 @@ public class ListaDeComprasController {
 	@Autowired
 	private RecommendationService recommendationService;
 	
-	
+	@Autowired
+	private UsuarioService usuarioService; 
 	
 	
 	//criando uma lista nova

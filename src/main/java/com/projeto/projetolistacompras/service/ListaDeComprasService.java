@@ -46,7 +46,8 @@ public class ListaDeComprasService {
 		Usuario usuario = usuarioRepository.findById(email)
 		    .orElseThrow(() -> new EntityNotFoundException("Usuário não encontrado com esse email:  " + email));
 			 
-			
+			usuario.getListaDeCompras().clear();
+			usuarioRepository.save(usuario);
 	}
 	
 	public List<ListaDeCompras> buscarPorEmail(String email){

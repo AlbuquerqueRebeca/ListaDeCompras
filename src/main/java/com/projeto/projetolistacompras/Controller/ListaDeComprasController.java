@@ -94,7 +94,9 @@ public class ListaDeComprasController {
 							   .getPrincipal();
 
 				String email = userDetails.getUsername();
-				usuarioService.excluirLista(email);			   
+				usuarioService.excluirLista(email);	
+				
+				return ResponseEntity.ok("Listas deletadas com sucesso!!");
 							
 							
 	}

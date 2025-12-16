@@ -99,7 +99,7 @@ public class ListaDeComprasController {
 			   return ResponseEntity.notFound().build();		   }
 	}
 
-
+   //sugestao de produtos
    @GetMapping("/sugestaoes/{email}")
    public ResponseEntity<List<String>> obterSugestoes(@PathVariable String email) {
 	List<String> sugestoes = recommendationService.sugerirItens(email);

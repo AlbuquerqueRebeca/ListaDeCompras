@@ -69,9 +69,9 @@ public class UsuarioController{
 				   .getPrincipal();
 
 			String email = userDetails.getUsername();
-			UsuarioService.excluirUsuario(email);
+			usuarioService.excluirUsuario(email);
 
-			return ResponseEntity.ok("Usuario deletado com sucesso!!");
+			return ResponseEntity.ok("Perfil deletado com sucesso!!");
 		}
 	
 	  
@@ -101,6 +101,6 @@ public class UsuarioController{
 	
 	
 	
-}
+
 
 

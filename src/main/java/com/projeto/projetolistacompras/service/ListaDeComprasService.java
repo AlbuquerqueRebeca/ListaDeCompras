@@ -12,6 +12,9 @@ import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.ListaDeComprasRepository;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
+
 @Service
 public class ListaDeComprasService {
 	
@@ -25,6 +28,7 @@ public class ListaDeComprasService {
 		this.usuarioRepository = usuarioRepository; 
 	}
 	
+	//criando lista de compras
 	public ListaDeCompras criarLista(String email, ListaDeCompras lista) {
 		return usuarioRepository.findByEmail(email).map(usuario -> {
 		lista.setUsuario(usuario); 
@@ -37,20 +41,23 @@ public class ListaDeComprasService {
 		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}
 	
-	@SuppressWarnings("null")
-	public void excluirLista(Long listaId) {
-		listaDeComprasRepository.deleteById(listaId);
+	@Transactional
+	public void excluirLista(String listaId) {
+		Usuario usuario = usuarioRepository.findById(email)
+		    .orElseThrow(() -> new EntityNotFoundException("Usuário não encontrado com esse email:  " + email));
+			 
+			
 	}
 	
 	public List<ListaDeCompras> buscarPorEmail(String email){
 		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}
-	
+	//salvando a lista
 	@SuppressWarnings("null")
 	public void salvar(ListaDeCompras lista) {
 		listaDeComprasRepository.save(lista);
 	}
-
+    //editando a lista de compras 
 	@SuppressWarnings("null")
 	public ListaDeCompras editar(ListaDeCompras listaAtualizada) {
 		return listaDeComprasRepository.save(listaAtualizada);

@@ -1,7 +1,6 @@
 package com.projeto.projetolistacompras.Controller;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.projetolistacompras.Dto.ListaDeComprasDto;
 import com.projeto.projetolistacompras.Entidade.Item;
 import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
-import com.projeto.projetolistacompras.Entidade.Usuario;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.ListaDeComprasService;
 import com.projeto.projetolistacompras.service.RecommendationService;
@@ -90,14 +87,15 @@ public class ListaDeComprasController {
 	//Excluir lista
 	@SuppressWarnings("null")
 	@DeleteMapping("/deletar-lista")
-	public ResponseEntity<String> excluindoLista(@RequestParam String email){
-		Optional<Usuario> apagarLista = usuarioRepository.findById(email);
-		if(apagarLista.isPresent()) {
-		usuarioRepository.delete(apagarLista.get());
-			return ResponseEntity.ok("Perfil deletado com Sucesso!!!!");			
-		   }else {
-			   return ResponseEntity.notFound().build();		   }
+	public ResponseEntity<String> excluindoLista(){
+			   UserDetails userDetails = (UserDetails) SecurityContextHolder
+			                   .getContext()
+							   .getAuthentication()
+							   .getPrincipal();
+							
+							
 	}
+	
 
    //sugestao de produtos
    @GetMapping("/sugestaoes/{email}")

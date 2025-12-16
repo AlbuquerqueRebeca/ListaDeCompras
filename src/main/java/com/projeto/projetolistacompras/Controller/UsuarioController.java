@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.projetolistacompras.Dto.UsuarioDto;
 import com.projeto.projetolistacompras.Entidade.Usuario;
-import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.UsuarioService;
 
 @RestController
@@ -24,8 +23,8 @@ import com.projeto.projetolistacompras.service.UsuarioService;
 public class UsuarioController{
 	
 	
-	@Autowired
-	private UsuarioRepository usuarioRepository; 
+	//@Autowired
+	//private UsuarioRepository usuarioRepository; 
 	
 	@Autowired
 	private UsuarioService usuarioService; 

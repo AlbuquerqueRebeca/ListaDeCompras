@@ -23,7 +23,6 @@ import com.projeto.projetolistacompras.Entidade.ListaDeCompras;
 import com.projeto.projetolistacompras.Repository.UsuarioRepository;
 import com.projeto.projetolistacompras.service.ListaDeComprasService;
 import com.projeto.projetolistacompras.service.RecommendationService;
-import com.projeto.projetolistacompras.service.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")
@@ -40,8 +39,8 @@ public class ListaDeComprasController {
 	@Autowired
 	private RecommendationService recommendationService;
 	
-	@Autowired
-	private UsuarioService usuarioService; 
+	//@Autowired
+	//private UsuarioService usuarioService; 
 	
 	
 	//criando uma lista nova
@@ -87,7 +86,7 @@ public class ListaDeComprasController {
 	}
 	
 	//Excluir lista
-	@SuppressWarnings("null")
+	
 	@DeleteMapping("/deletar-lista")
 	public ResponseEntity<String> excluindoLista(){
 			   UserDetails userDetails = (UserDetails) SecurityContextHolder
@@ -96,7 +95,7 @@ public class ListaDeComprasController {
 							   .getPrincipal();
 
 				String email = userDetails.getUsername();
-				usuarioService.excluirLista(email);	
+				listaDeComprasService.excluirLista(email);	
 				
 				return ResponseEntity.ok("Listas deletadas com sucesso!!");
 							

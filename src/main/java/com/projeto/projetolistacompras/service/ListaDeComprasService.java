@@ -41,14 +41,15 @@ public class ListaDeComprasService {
 		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}
 	
+	//excluindo lista de compras
 	@Transactional
-	public void excluirLista(String listaId) {
-		Usuario usuario = usuarioRepository.findById(email)
-		    .orElseThrow(() -> new EntityNotFoundException("Usuário não encontrado com esse email:  " + email));
-			 
-			usuario.getListaDeCompras().clear();
-			usuarioRepository.save(usuario);
-	}
+	public void excluirLista(String email) {
+		if(!usuarioRepository.existsById(email)){
+			throw new EntityNotFoundException("Usuário não encontrado com esse email:   " + email);
+		}
+           ListaDeComprasRepository.deleteAllByUsuarioEmail(email);
+		}
+	
 	
 	public List<ListaDeCompras> buscarPorEmail(String email){
 		return listaDeComprasRepository.findByUsuarioEmail(email);

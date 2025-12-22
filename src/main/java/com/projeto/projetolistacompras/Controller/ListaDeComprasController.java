@@ -93,10 +93,17 @@ public class ListaDeComprasController {
 			                   .getContext()
 							   .getAuthentication()
 							   .getPrincipal();
+                 String email = userDetails.getUsername();
+                  System.out.println("EMAIL EXTRAIDO DO TOKEN " + email);
 
-				String email = userDetails.getUsername();
-				listaDeComprasService.excluirLista(email);	
+                 usuarioRepository.findByEmail(email).ifPresentOrElse(
+					     u -> System.out.println("USUARIO ENCONTRADO: " + u.getEmail()),
+						() -> System.out.println("NENHUM USUARIO ENCONTRADO COM ESSE EMAIL NO BANCO")				
+					 );
+				     
+
 				
+				listaDeComprasService.excluirLista(email);	
 				return ResponseEntity.ok("Listas deletadas com sucesso!!");
 							
 							
@@ -104,7 +111,7 @@ public class ListaDeComprasController {
 	
 
    //sugestao de produtos
-   @GetMapping("/sugestaoes/{email}")
+   @GetMapping("/sugestaoes")
    public ResponseEntity<List<String>> obterSugestoes(@PathVariable String email) {
 	List<String> sugestoes = recommendationService.sugerirItens(email);
 	return ResponseEntity.ok(sugestoes);

@@ -44,13 +44,14 @@ public class ListaDeComprasService {
 	//excluindo lista de compras
 	@Transactional
 	public void excluirLista(String email) {
-		if(!usuarioRepository.existsById(email)){
-			throw new EntityNotFoundException("Usuário não encontrado com esse email:   " + email);
-		}
-           ListaDeComprasRepository.deleteAllByUsuarioEmail(email);
-		}
+		Usuario usuario = usuarioRepository.findByEmail(email)
+		     .orElseThrow(() -> new EntityNotFoundException("Usuário não encontrado com esse email:   " + email));
+			 listaDeComprasRepository.deleteAll(usuario.getListaDeCompras());
+		   
+
+	}
 	
-	
+	//buscando lista 
 	public List<ListaDeCompras> buscarPorEmail(String email){
 		return listaDeComprasRepository.findByUsuarioEmail(email);
 	}

@@ -1,7 +1,8 @@
 package com.projeto.projetolistacompras.service;
 
-import java.util.ArrayList;
+
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,27 +22,27 @@ public class UsuarioDetailsImpl implements UserDetails{
          
          
          
-         public UsuarioDetailsImpl(String email, String nome, String username, String password,
+         public UsuarioDetailsImpl(String email, String nome, String password,
         		Collection<? extends GrantedAuthority> authorities) {
         	 
         	 
         	    super();
         	    this.email = email;
         	    this.nome = nome;
-        	    this.username = username;
         	    this.password = password;
         	    this.authorities = authorities;
         	 
          }
          
          public static UsuarioDetailsImpl build(Usuario usuario) {
-        	      
+        	  
+
         	           return  new UsuarioDetailsImpl(
         	        		   usuario.getEmail(),
         	        		   usuario.getNome(),
-        	        		   usuario.getLogin(),
         	        		   usuario.getSenha(),
-        	        		   new ArrayList<>());
+        	        		   List.of()
+                    );        
         	 
          }
          
@@ -63,7 +64,7 @@ public class UsuarioDetailsImpl implements UserDetails{
          @Override
          public String getUsername() {
         	  
-        	     return username;
+        	     return email;
          }
          
          @Override

@@ -49,10 +49,9 @@ public class UsuarioService{
 	
 	@Transactional
 	public void excluirUsuario(String email){ 
-		if(!usuarioRepository.existsById(email)) {
-			throw new EntityNotFoundException("Usuario não encontrado com esse email:  " + email);
-		}
-		usuarioRepository.deleteById(email);
+		Usuario usuario = usuarioRepository.findByEmail(email)
+		            .orElseThrow(() -> new EntityNotFoundException("Usuário não encontrado com esse email:    "));
+					usuarioRepository.delete(usuario);
 	}
 	
 	@SuppressWarnings("null")

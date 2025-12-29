@@ -20,16 +20,21 @@ public class RecommendationService {
     }
     //busca todas as listas
     public List<String> sugerirItens(String email) {
-    List<ListaDeCompras> historico = listaDeComprasRepository.findByUsuarioEmail(email);   
+        System.out.println("ENTROU NO METODO SUGERIRiTENS");  //log
+    List<ListaDeCompras> historico = listaDeComprasRepository.findByUsuarioEmailWithItens(email); 
+    
       
    //extrai todos os itens
     List<Item> itens = historico.stream() 
         .flatMap(lista -> lista.getItens().stream())
         .collect(Collectors.toList());
+        System.out.println("ITENS COLETADOS: " + itens);    //log
+
 
      //conta a frequencia de itens
      Map<String, Long> frequencia = itens.stream()
      .collect(Collectors.groupingBy(Item::getNome, Collectors.counting()));
+     System.out.println("FREQUENCIA:  " + frequencia);     //log
      
      return frequencia.entrySet().stream()
         .filter(e -> e.getValue() > 2 )

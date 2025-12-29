@@ -1,10 +1,13 @@
 package com.projeto.projetolistacompras.Entidade;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,9 +31,12 @@ private String descricao;
 @JoinColumn(name = "usuario_id") 
 private Usuario usuario; 
 
-@ElementCollection 
-private List<Item>itens;
-
+@ElementCollection(fetch = FetchType.EAGER) 
+@CollectionTable(
+	name = "lista_de_compras_itens",
+	joinColumns = @JoinColumn(name = "lista_id")
+)    //ajuste
+private List<Item> itens = new ArrayList<>();
 
 
 //Getters / Setters

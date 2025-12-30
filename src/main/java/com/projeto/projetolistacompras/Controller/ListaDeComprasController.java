@@ -11,7 +11,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,9 +45,9 @@ public class ListaDeComprasController {
 	
 	//criando uma lista nova
 	@PostMapping("/criar-lista")
-	public ResponseEntity<String> criarListaNova(@RequestBody ListaDeComprasDto listaDto){
-		ListaDeCompras lista = converterDtoParaEntidade(listaDto);
-		listaDeComprasService.salvar(lista);
+	public ResponseEntity<String> criarListaNova(@RequestBody ListaDeComprasDto listaDto, Authentication authentication){
+		String email = authentication.getName();
+		listaDeComprasService.salvarDto(listaDto, email);
 		return ResponseEntity.status(HttpStatus.CREATED).body("Lista criada com Sucesso!! Boas compras");
 		}
 	
@@ -69,11 +68,12 @@ public class ListaDeComprasController {
 	    	lista.setItens(itensConvertidos);
 	    	return lista;
 	}
-	//Buscando lista por email
-	@GetMapping("/buscar/{email}")
-	public ResponseEntity<List<ListaDeCompras>> buscarPorEmail(@PathVariable String email){
+	//Buscando listas
+	@GetMapping("/buscar")
+	public ResponseEntity<List<ListaDeCompras>> buscarPorEmail(Authentication authentication){
+		String email = authentication.getName(); //pega token jwt
 		List<ListaDeCompras> listas = listaDeComprasService.buscarPorEmail(email);
-		return ResponseEntity.ok(listas);
+        return ResponseEntity.ok(listas);
 	}
 	
 	
@@ -112,12 +112,19 @@ public class ListaDeComprasController {
 	
 
    //sugestao de produtos
-   @GetMapping("/sugestoes")
-   public ResponseEntity<List<String>> obterSugestoes(Authentication authentication) {
-	UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-	String email = userDetails.getUsername();
-	List<String> sugestoes = recommendationService.sugerirItens(email);
-	return ResponseEntity.ok(sugestoes);
-   }
+	@GetMapping("/sugestoes")
+	public ResponseEntity<List<String>> obterSugestoes(Authentication authentication) {
+	 String email = authentication.getName();
+	 List<String> sugestoes = recommendationService.sugerirItens(email);
+	 return ResponseEntity.ok(sugestoes);
+	}
+
+	   //associa listas sem usuario (para uso de manutençao)
+	   @PostMapping("/associar-listas")
+	   public ResponseEntity<String> associarListas(Authentication authentication) {
+		   String email = authentication.getName();
+		   int qtd = listaDeComprasService.associarListasSemUsuarioPara(email);
+		   return ResponseEntity.ok("Listas associadas: " + qtd);
+	   }
 
 }

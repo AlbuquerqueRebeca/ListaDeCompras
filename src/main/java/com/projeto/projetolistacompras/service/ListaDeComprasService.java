@@ -114,6 +114,22 @@ public class ListaDeComprasService {
 
 	    listaDeComprasRepository.save(lista);
 	}
+
+	@Transactional
+	public int associarListasSemUsuarioPara(String email) {
+		Usuario usuario = usuarioRepository.findByEmail(email)
+			.orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
+
+		List<ListaDeCompras> listasSemUsuario = listaDeComprasRepository.findAll().stream()
+			.filter(l -> l.getUsuario() == null)
+			.collect(Collectors.toList());
+
+		listasSemUsuario.forEach(l -> l.setUsuario(usuario));
+
+		listaDeComprasRepository.saveAll(listasSemUsuario);
+
+		return listasSemUsuario.size();
+	}
 	
 	        
 	        

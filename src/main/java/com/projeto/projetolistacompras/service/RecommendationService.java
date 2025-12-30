@@ -21,7 +21,7 @@ public class RecommendationService {
     //busca todas as listas
     public List<String> sugerirItens(String email) {
         System.out.println("ENTROU NO METODO SUGERIRiTENS");  //log
-    List<ListaDeCompras> historico = listaDeComprasRepository.findByUsuarioEmailWithItens(email); 
+    List<ListaDeCompras> historico = listaDeComprasRepository.findByUsuarioEmail(email); 
     
       
    //extrai todos os itens
@@ -36,10 +36,10 @@ public class RecommendationService {
      .collect(Collectors.groupingBy(Item::getNome, Collectors.counting()));
      System.out.println("FREQUENCIA:  " + frequencia);     //log
      
-     return frequencia.entrySet().stream()
-        .filter(e -> e.getValue() > 2 )
-        .map(Map.Entry::getKey)
-        .collect(Collectors.toList());
+      return frequencia.entrySet().stream()
+          .filter(e -> e.getValue() >= 1 )
+          .map(Map.Entry::getKey)
+          .collect(Collectors.toList());
      
     }
 

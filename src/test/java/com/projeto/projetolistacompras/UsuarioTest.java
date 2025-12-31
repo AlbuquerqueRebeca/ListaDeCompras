@@ -19,6 +19,8 @@ public class UsuarioTest {
 	  u.setNome("Rebeca");  //nome de usuario
       u.setEmail("rebeca@gmail.com");  //email de usuario
 
+	  usuarioRepository.save(u); //salvando usuario no banco de dados
+
 	}
 
 }

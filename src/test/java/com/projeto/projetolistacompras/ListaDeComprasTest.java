@@ -42,10 +42,31 @@ public class listaDeComprasTest {
             .andExpect(jsonPath("$[1]").value("Feijão"))
             .andExpect(jsonPath("$[2]").value("Café"));
           
-             
+             }
+
+      @Test
+      @WithMockUser(username = "rebeca@gmail.com")
+      void deveCriarListaNova() throws Exception {
+            String listaJson = """
+                    {
+                        "nome": "Lista da semana"
+                        "descriçao: "Itens para abastecer a casa"
+                        "Itens":  [
+                           {"nome": "Arroz", "quantidade": 1},
+                           {"nome": "Café", "quantidade": 2},
+                          {"nome": "Feijão", "quantidade": 3}                     
+                        
+        ] 
+                        }
+                    """;
+
+            
 
 
-    }
+
+
+      }
+
 
     
     

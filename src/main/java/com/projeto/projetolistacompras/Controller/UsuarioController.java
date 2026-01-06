@@ -47,7 +47,7 @@ public class UsuarioController{
 	
 	
 	
-	//endpoint temporario pra teste //
+	//endpoint pra teste 
 	@GetMapping("/listar-todos")
 	public List<UsuarioDto>  listarTodos(){
 	return usuarioService.listarTodos();

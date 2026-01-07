@@ -16,6 +16,7 @@ public class ListaDeComprasDto {
 	
 	
 	
+	
 	///getters e setters
 	
 	public String getNome() {
@@ -38,7 +39,12 @@ public class ListaDeComprasDto {
 		this.itens = itens;
 	}
 	
-	
+	 public long getId(){
+		return id;
+	}
+	public void setId(long id){
+		this.id = id;
+	}
 	
 	
 	

@@ -4,6 +4,7 @@ import java.util.List;
 
 public class ListaDeComprasDto {
 	
+	private long id;
 	private String nome;
 	private String descricao;
 	private List<ItemDto> itens;

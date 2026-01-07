@@ -60,11 +60,31 @@ public class ListaDeComprasService {
 	public void salvar(ListaDeCompras lista) {
 		listaDeComprasRepository.save(lista);
 	}
+
     //editando a lista de compras 
-	@SuppressWarnings("null")
-	public ListaDeCompras editar(ListaDeCompras listaAtualizada) {
-		return listaDeComprasRepository.save(listaAtualizada);
+     public ListaDeCompras editar(ListaDeComprasDto dto, String email) {
+		ListaDeCompras lista = listaDeComprasRepository.findById(dto.getId())
+		  .orElseThrow(() -> new RuntimeException("Lista não encontrada"));
+
+		  lista.setNome(dto.getNome());
+		  lista.setDescricao(dto.getDescricao());
+		
+           
+		  List<Item> itensConvertidos = dto.getItens().stream()
+			.map(itemDto -> {
+				Item item = new Item();
+				item.setNome(itemDto.getNome());
+				item.setQuantidade(itemDto.getQuantidade());
+				return item;
+			})
+			.collect(Collectors.toList());
+
+		lista.setItens(itensConvertidos);
+
+	    return lista;
 	}
+		
+	
 	
 	public void salvarDto(ListaDeComprasDto dto, String email) {
 		ListaDeCompras lista = converterDtoParaEntidade(dto);
@@ -83,23 +103,11 @@ public class ListaDeComprasService {
 	    lista.setNome(dto.getNome());
 
 	   
-		List<Item> itensConvertidos = dto.getItens().stream()
-			.map(itemDto -> {
-				Item item = new Item();
-				item.setNome(itemDto.getNome());
-				item.setQuantidade(itemDto.getQuantidade());
-				return item;
-			})
-			.collect(Collectors.toList());
-
-		lista.setItens(itensConvertidos);
-
-	    return lista;
-	}
+		
 	
 	public void editarDto(ListaDeComprasDto dto, String email) {
-	    ListaDeCompras lista = listaDeComprasRepository.findByNome(dto.getNome())
-	        .orElseThrow(() -> new RuntimeException("Lista não encontrada"));
+		ListaDeCompras lista = listaDeComprasRepository.findByNomeAndUsuarioEmail(dto.getNome(), email)
+			.orElseThrow(() -> new RuntimeException("Lista não encontrada"));
 
 		List<Item> itensConvertidos = dto.getItens().stream()
 			.map(itemDto -> {

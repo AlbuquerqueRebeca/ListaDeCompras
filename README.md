@@ -35,6 +35,7 @@ Todas as informações são armazenadas na nuvem via Railway, garantindo seguran
 - Visual Studio Code (VS Code)
 - Posteman -> para testar as rotas da API
 - Git -> para versionamento e controle de código
+- Github -> hospedagem de código 
 - Raiway -> para gerenciar o deploy e banco de dados na nuvem
 
 --------------------------------------------------------------------------------------------------------------
@@ -68,6 +69,9 @@ Todas as informações são armazenadas na nuvem via Railway, garantindo seguran
 
 
 -------------------------------------------------------------------------------------------------------
+
+
+#### Rotas da API
 
 
 

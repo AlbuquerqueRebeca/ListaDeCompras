@@ -91,6 +91,7 @@ Todas as informações são armazenadas na nuvem via Railway, garantindo seguran
 #### Fazendo login
 
 { "username": "Rafaella",
+
  "password": "242526"
 }
 
@@ -187,16 +188,15 @@ O que este teste garante :
 
 ------------------------------------------------------------------------------------------------------------
 
-✅ Conclusão
+#### ✅ Conclusão
+
 Este projeto é uma aplicação onde o usuário é capaz de criar uma nova conta com dados básicos (nome, email e senha). Os usuários devem fazer login em suas contas usando suas credenciais, e todas as senhas são codificadas. Após o login e a verificação dos dados, eles recebem um token JWT que será usado para autenticar suas solicitações.
 
-Os usuários autenticados são capazes de criar, visualizar, atualizar e deletar suas listas de compras, além de reutilizar listas anteriores. O sistema também conta com um módulo de inteligência artificial básica, que sugere produtos mais frequentes para agilizar a criação DE 
- novas listas.
+Os usuários autenticados são capazes de criar, visualizar, atualizar e deletar suas listas de compras, além de reutilizar listas anteriores. O sistema também conta com um módulo de inteligência artificial básica, que sugere produtos mais frequentes para agilizar a criação DE  novas listas.
 
- Apesar de ser uma aplicação simples, este projeto foi essencial para praticar meus conhecimentos até aqui, incluindo Spring Web, Spring Security, banco de dados relacional, Gradle, Railway para deploy e testes de integração com JUnit + Mockito.
+ Apesar de ser uma aplicação simples, este projeto me deu a oportunidade de explorar tecnologias que eu ainda não tinha utilizado em projeto anteriores, como PostgreSQL para persistência, Railway para deploy em nuvem, testes de integração com mockito e até uma inteligência artificial básica para sugerir produtos frequentes. 
 
-Além disso, este projeto nasceu de uma necessidade pessoal: eu e minha mãe ainda fazemos listas de supermercado no papel e, muitas vezes, esquecemos o papel em casa ou deixamos de anotar algum produto importante. Essa dificuldade não se limita apenas às compras 
-de supermercado, mas também a listas de presentes e tarefas. Por isso, além de aplicar novas tecnologias, este projeto surgiu da vontade de resolver um problema real da minha rotina e torná-la mais prática e organizada.
+Além disso, este projeto nasceu de uma necessidade pessoal: eu e minha mãe ainda fazemos listas de supermercado no papel e, muitas vezes, esquecemos o papel em casa ou deixamos de anotar algum produto importante. Essa dificuldade não se limita apenas às compras de supermercado, mas também a listas de presentes e tarefas. Por isso, além de aplicar novas tecnologias, este projeto surgiu da vontade de resolver um problema real da minha rotina e torná-la mais prática e organizada.
 
 
  

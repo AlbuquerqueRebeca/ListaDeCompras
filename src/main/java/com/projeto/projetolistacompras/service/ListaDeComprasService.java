@@ -101,8 +101,8 @@ public class ListaDeComprasService {
 
 	    
 	    lista.setNome(dto.getNome());
-
-	   
+        return lista;
+	}
 		
 	
 	public void editarDto(ListaDeComprasDto dto, String email) {
@@ -139,11 +139,11 @@ public class ListaDeComprasService {
 		return listasSemUsuario.size();
 	}
 	
+      
 	        
-	        
-	        
+}        
 	    
-	 }
+	 
 	
 	
 

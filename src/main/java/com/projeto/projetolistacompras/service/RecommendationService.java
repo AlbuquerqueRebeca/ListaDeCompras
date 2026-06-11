@@ -15,8 +15,11 @@ public class RecommendationService {
 
     private final ListaDeComprasRepository listaDeComprasRepository; 
 
-    public RecommendationService(ListaDeComprasRepository listaDeComprasRepository) {
+    private final openAiService openAiService;
+
+    public RecommendationService(ListaDeComprasRepository listaDeComprasRepository, openAiService openAiService) {
     this.listaDeComprasRepository = listaDeComprasRepository; 
+    this.openAiService = openAiService;
     }
     //busca todas as listas
     public List<String> sugerirItens(String email) {
@@ -40,7 +43,15 @@ public class RecommendationService {
           .filter(e -> e.getValue() >= 1 )
           .map(Map.Entry::getKey)
           .collect(Collectors.toList());
-     
     }
+          //sugerir receitas
+     public String sugerirReceita(String email) {//usando email autenticado
+     List<ListaDeCompras> listas = listaDeComprasRepository.findByUsuarioEmail(email);
+     List<String> itens = listas.stream() //vai extrair os nomes dos itens
+                               .map(ListaDeCompras::getNomeItem)
+                               .toList();
+     return openAiService.gerarSugestao(itens);
+     }
+    
 
 }

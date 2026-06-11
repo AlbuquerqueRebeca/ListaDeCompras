@@ -112,7 +112,7 @@ public class ListaDeComprasController {
 	
 
    //sugestao de produtos
-	@GetMapping("/sugestoes")
+	@GetMapping("/sugestao-produto")
 	public ResponseEntity<List<String>> obterSugestoes(Authentication authentication) {
 	 String email = authentication.getName();
 	 List<String> sugestoes = recommendationService.sugerirItens(email);
@@ -125,6 +125,13 @@ public class ListaDeComprasController {
 		   String email = authentication.getName();
 		   int qtd = listaDeComprasService.associarListasSemUsuarioPara(email);
 		   return ResponseEntity.ok("Listas associadas: " + qtd);
+	   }
+
+	   @PostMapping("/sugestao-receita")
+	   public ResponseEntity<String> obterSugestaoReceita(Authentication authentication) {
+		   String email = authentication.getName();
+		   String sugestao = recommendationService.sugerirReceita(email);  //criar metodo na classe recomendationservice
+		   return ResponseEntity.ok(sugestao);
 	   }
 
 }

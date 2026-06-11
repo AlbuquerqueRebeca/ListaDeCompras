@@ -25,7 +25,7 @@ private long id;
 private String nome; 
 private String descricao;
 
-
+private String nomeItem;
 
 @ManyToOne
 @JoinColumn(name = "usuario_id") 
@@ -80,6 +80,10 @@ public List<Item> getItens() {
 
 public void setItens(List<Item> itens) {
 	this.itens = itens;
+}
+
+public String getNomeItem(){
+	return nomeItem;
 }
 
 

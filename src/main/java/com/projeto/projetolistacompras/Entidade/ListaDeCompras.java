@@ -25,7 +25,7 @@ private long id;
 private String nome; 
 private String descricao;
 
-private String nomeItem;
+private String nomeItem;  //guarda  o nome
 
 @ManyToOne
 @JoinColumn(name = "usuario_id") 

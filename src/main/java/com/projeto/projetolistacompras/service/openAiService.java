@@ -9,6 +9,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class openAiService {
 
     @Value("${openai.api.key}")
@@ -22,7 +25,7 @@ public class openAiService {
 
        public String gerarSugestao(List<String> itens){  
     
-         //montar prompet (exemplos de prompets ) //buscar por exemplos de prompets 
+         //montar prompet 
             String prompt = """
              Você é um assitente de compras inteligente.
             O usuário possui os seguintes itens em casa: %s
@@ -34,23 +37,50 @@ public class openAiService {
                               
                     """.formatted(String.join(", ", itens));
    
-        // criar headers (informaçoes tecnicas que vão junto da requisiçao HTTP)
+        
+        //corpo da requisiçao HTTP // o que quero enviar no corpo da requisição
+           String body = """
+           {
+            "model": "gpt-40-mini",  //modelo mais recente , mais rapido e mais barato
+            "messages": [
+            {
+                "role": "system", "content": "Você é um assistente de compras inteligente." },
+            {
+                 "role": "user", "content": "%s"
+                } ],
+                 "temperature": 0.7  // controla a criatividade da resposta
+         
+         }
+               """.formatted(prompt);
+
+               // criando headers (informaçoes tecnicas que vão junto da requisiçao HTTP)
             HttpHeaders headers = new HttpHeaders(); //inicializando
             headers.setContentType(MediaType.APPLICATION_JSON); // enviando dados em formato json
             headers.setBearerAuth(apiKey); // autenticaçao 
 
-            //simulando uma requisiçao HTTP POST autenticada (corpo em formato json e os headers)
-            HttpEntity<String> entity = new HttpEntity<>("{\"item\":\"arroz\"}", headers);
-           //trocar a URL AQUI >>>>>>>>>>>>>>>>>>
-           String response = restTemplate.postForObject("https://sua-api.com/sugestao", entity, String.class);
-           System.out.println(response);
+            HttpEntity<String> entity = new HttpEntity<>(body, headers); //criando a entidade
+
+        //enviar a requisiçao para o endpoint correto da openai
+        //enviando a requsição e trazendo resposta 
+        String retorno = restTemplate.postForObject(
+         "http://api.openai.com/v1/chat/completion",
+         entity,
+         String.class
+        );
+        //estraindo texto da resposta
+        try{
+         ObjectMapper mapper = new ObjectMapper();
+         JsonNode root = mapper.readTree(retorno);
+         String response =  root.path("choices").get(0).path("message").path("content").asText();
+         return response;
+        }catch(Exception e){
+         e.printStackTrace();
+         return "Erro ao gerar sugestão";
+        }
 
 
-        //criar body json
-        //enviar post para openai
-
-        //receber resposta (em linguagem natural)
-        //retornar texto
+         
+        
 
 
 

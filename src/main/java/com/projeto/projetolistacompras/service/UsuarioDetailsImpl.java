@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.projeto.projetolistacompras.Entidade.Usuario;
 
+
 public class UsuarioDetailsImpl implements UserDetails{
 	
 	

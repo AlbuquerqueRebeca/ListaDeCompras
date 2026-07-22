@@ -14,14 +14,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
-public class openAiService {
+public class OpenAiService {
 
     @Value("${openai.api.key}")
     private String apiKey;
     
     //injeção de dependencia
     private final RestTemplate restTemplate;
-    public openAiService(RestTemplate restTemplate){
+    public OpenAiService(RestTemplate restTemplate){
          this.restTemplate = restTemplate;
     }
 

@@ -15,15 +15,15 @@ public class RecommendationService {
 
     private final ListaDeComprasRepository listaDeComprasRepository; 
 
-    private final openAiService openAiService;
+    private final OpenAiService openAiService;
 
-    public RecommendationService(ListaDeComprasRepository listaDeComprasRepository, openAiService openAiService) {
+    public RecommendationService(ListaDeComprasRepository listaDeComprasRepository, OpenAiService openAiService) {
     this.listaDeComprasRepository = listaDeComprasRepository; 
     this.openAiService = openAiService;
     }
     //busca todas as listas
     public List<String> sugerirItens(String email) {
-        System.out.println("ENTROU NO METODO SUGERIRiTENS");  //log
+        System.out.println("ENTROU NO METODO SUGERIR iTENS");  //log
     List<ListaDeCompras> historico = listaDeComprasRepository.findByUsuarioEmail(email); 
     
       

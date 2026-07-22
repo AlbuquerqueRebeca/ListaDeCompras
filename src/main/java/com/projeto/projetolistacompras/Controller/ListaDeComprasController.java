@@ -127,7 +127,7 @@ public class ListaDeComprasController {
 		   return ResponseEntity.ok("Listas associadas: " + qtd);
 	   }
 
-	   @PostMapping("/sugestao-receita")
+	   @PostMapping("/sugestao-receita-auto")
 	   public ResponseEntity<String> obterSugestaoReceita(Authentication authentication) {
 		   String email = authentication.getName();
 		   String sugestao = recommendationService.sugerirReceita(email);  //criar metodo na classe recomendationservice

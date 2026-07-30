@@ -79,9 +79,8 @@ public class ListaDeComprasController {
 	
 	//Editar lista 
 	@PutMapping("/editar-lista")
-	public ResponseEntity<String> editarListas(@RequestBody ListaDeComprasDto listaDto){
-	UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-	String email = userDetails.getUsername();
+	public ResponseEntity<String> editarListas(@RequestBody ListaDeComprasDto listaDto, Authentication authentication){
+	String email = authentication.getName();
 	listaDeComprasService.editarDto(listaDto, email);	
 	return ResponseEntity.ok("Lista editada com sucesso!!");		
 	}

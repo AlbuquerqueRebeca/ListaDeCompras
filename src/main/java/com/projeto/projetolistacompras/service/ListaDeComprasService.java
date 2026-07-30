@@ -101,14 +101,19 @@ public class ListaDeComprasService {
 
 	    
 	    lista.setNome(dto.getNome());
+		return lista;
 
-	   
+	}
 		
 	
 	public void editarDto(ListaDeComprasDto dto, String email) {
-		ListaDeCompras lista = listaDeComprasRepository.findByNomeAndUsuarioEmail(dto.getNome(), email)
+		// Buscar pelo nome da lista associado ao email do usuário
+		List<ListaDeCompras> listas = listaDeComprasRepository.findByNomeAndUsuarioEmail(dto.getNome(), email);
+		ListaDeCompras lista = listas.stream()
+			.findFirst()
 			.orElseThrow(() -> new RuntimeException("Lista não encontrada"));
 
+		// Atualizar campos a partir do DTO
 		List<Item> itensConvertidos = dto.getItens().stream()
 			.map(itemDto -> {
 				Item item = new Item();
@@ -118,9 +123,11 @@ public class ListaDeComprasService {
 			})
 			.collect(Collectors.toList());
 
+		lista.setNome(dto.getNome());
+		lista.setDescricao(dto.getDescricao());
 		lista.setItens(itensConvertidos);
 
-	    listaDeComprasRepository.save(lista);
+		listaDeComprasRepository.save(lista);
 	}
 
 	@Transactional
@@ -142,8 +149,8 @@ public class ListaDeComprasService {
 	        
 	        
 	        
-	    
-	 }
+}    
+	 
 	
 	
 

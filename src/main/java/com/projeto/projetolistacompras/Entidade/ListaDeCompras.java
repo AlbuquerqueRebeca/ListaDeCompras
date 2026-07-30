@@ -13,8 +13,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
-@Entity 
+@Entity
+@Table(name = "lista_de_compras", uniqueConstraints = {@UniqueConstraint(columnNames = {"usuario_id","nome"})})
 public class ListaDeCompras {
 	
 @Id

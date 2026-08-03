@@ -16,7 +16,9 @@ public class OpenAiService {
         this.restTemplate = restTemplate; 
     }
 
-       public String gerarSugestao()
+       public String gerarSugestao(List<String> itens){
+        
+       }
 
 
 

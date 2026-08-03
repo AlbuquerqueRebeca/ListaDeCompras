@@ -12,4 +12,7 @@ public class OpenAiService {
 
     //injeção de dependencia
     private final RestTemplate restTemplate;
+    public OpenAiService(RestTemplate restTemplate){
+        this.restTemplate = restTemplate; 
+    }
 }

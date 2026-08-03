@@ -15,4 +15,10 @@ public class OpenAiService {
     public OpenAiService(RestTemplate restTemplate){
         this.restTemplate = restTemplate; 
     }
+
+       public String gerarSugestao()
+
+
+
+
 }

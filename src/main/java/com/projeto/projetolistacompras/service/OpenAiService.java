@@ -17,7 +17,32 @@ public class OpenAiService {
     }
 
        public String gerarSugestao(List<String> itens){
-        
+
+
+
+        //prompet
+        String prompt = """
+        Você é um assitente de compras inteligente.
+        O usuário possui os seguintes itens em casa: %s
+        Com base nesses itens sugerir entre 5 e 10 produtos complementares
+        Não repita itens já existentes.
+        Analise os ingredientes informados.
+        Responda em português e em tópicos, com explicações adicionais para 
+        cada sugestão."      
+               
+                     """.formatted(String.join(", ", itens));
+
+
+        //corpo da requisição
+        String  body = """ 
+        {
+        "model": "gpt-40-,mini",
+
+        }
+        """;
+
+
+
        }
 
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 public class OpenAiService {
 
     @value("${openai.api.key}") 
+    private String apikey;
 
     
 }

@@ -37,6 +37,15 @@ public class OpenAiService {
         String  body = """ 
         {
         "model": "gpt-40-,mini",
+         "messagens":[
+         {
+           "role": "system", "content": "Você é um assitente de compras inteligente." },
+           
+
+
+
+
+
 
         }
         """;

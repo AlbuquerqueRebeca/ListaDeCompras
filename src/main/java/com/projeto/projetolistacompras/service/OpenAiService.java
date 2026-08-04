@@ -77,7 +77,10 @@ public class OpenAiService {
         JsonNode root = mapper.readTree(retorno);
         String response = root.path("choices").get(0).path("message").path("content").asText();
         return response;
-     }
+       }catch(Excepetion e){
+        e.printStackTrace();
+        return "Erro ao gerar sugestão";
+       }
 
 
 

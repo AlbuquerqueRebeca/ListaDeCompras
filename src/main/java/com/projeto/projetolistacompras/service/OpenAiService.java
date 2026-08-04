@@ -9,6 +9,8 @@ import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Service
 public class OpenAiService {
 
@@ -61,12 +63,19 @@ public class OpenAiService {
      HttpEntity<String> request = new HttpEntity<>(body, headers);
 
      
-
+     //enviando a requisiçao e trazendo resposta 
      String retorno = restTemplate.postForObjetct(
         "https://api.openai.com/v1/chat/completion",
         entity,
         String.class
      );
+     
+     //extraindo texto da resposta
+     try{
+        ObjectMapper mapper = new ObjectMapper();
+     }
+
+
 
    
        }

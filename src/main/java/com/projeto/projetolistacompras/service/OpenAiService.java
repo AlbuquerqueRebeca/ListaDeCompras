@@ -1,5 +1,8 @@
 package com.projeto.projetolistacompras.service;
 
+import java.net.http.HttpHeaders;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -47,6 +50,14 @@ public class OpenAiService {
         
        }
         """.formatted(prompt);
+
+      //adicionando headers 
+      HttpHeaders headers = new HttpHeaders();
+
+
+
+
+
 
 
 

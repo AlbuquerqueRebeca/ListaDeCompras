@@ -43,7 +43,7 @@ public class OpenAiService {
          {
            "role": "user", "content": "%s"
          } ],
-
+             "temperature": 0.7 
 
 
 

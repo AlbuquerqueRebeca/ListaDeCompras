@@ -75,7 +75,8 @@ public class OpenAiService {
      try{
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.readTree(retorno);
-
+        String response = root.path("choices").get(0).path("message").path("content").asText();
+        return response;
      }
 
 

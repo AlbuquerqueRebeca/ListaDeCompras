@@ -9,6 +9,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
@@ -73,6 +74,8 @@ public class OpenAiService {
      //extraindo texto da resposta
      try{
         ObjectMapper mapper = new ObjectMapper();
+        JsonNode root = mapper.readTree(retorno);
+
      }
 
 

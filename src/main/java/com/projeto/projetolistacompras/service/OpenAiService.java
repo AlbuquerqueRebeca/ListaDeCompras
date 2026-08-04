@@ -40,7 +40,9 @@ public class OpenAiService {
          "messagens":[
          {
            "role": "system", "content": "Você é um assitente de compras inteligente." },
-           
+         {
+           "role": "user", "content": "%s"
+         } ],
 
 
 

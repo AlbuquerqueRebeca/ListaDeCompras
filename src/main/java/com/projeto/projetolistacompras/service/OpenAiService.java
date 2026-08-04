@@ -53,8 +53,8 @@ public class OpenAiService {
 
       //adicionando headers 
       HttpHeaders headers = new HttpHeaders();
-
-
+      headers.setContentType(MediaType.APPLICATION_JSON); //enviando dados em formato json
+   
 
 
 

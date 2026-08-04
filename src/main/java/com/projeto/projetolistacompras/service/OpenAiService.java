@@ -60,9 +60,15 @@ public class OpenAiService {
 
      HttpEntity<String> request = new HttpEntity<>(body, headers);
 
+     
 
+     String retorno = restTemplate.postForObjetct(
+        "https://api.openai.com/v1/chat/completion",
+        entity,
+        String.class
+     );
 
-
+   
        }
 
 

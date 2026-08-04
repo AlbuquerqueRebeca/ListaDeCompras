@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -57,7 +58,7 @@ public class OpenAiService {
       headers.setContentType(MediaType.APPLICATION_JSON); //enviando dados em formato json
       headers.setBearerAuth(apiKey); //autenticação com a chave da api
 
-
+     HttpEntity<String> request = new HttpEntity<>(body, headers);
 
 
 

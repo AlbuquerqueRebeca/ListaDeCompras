@@ -44,9 +44,10 @@ public class RecommendationService {
     }
 
     //sugerir receitas 
-    public String sugerirReceita(String email){
+    public String sugerirReceita(String email){ //usando email autenticado
     List<ListaDeCompras> listas = listaDeComprasRepository.findByUsuarioEmail(email);
-    List<String> itens = listas.stream()
+    List<String> itens = listas.stream() //extraindo nome dos itens
+                         .map(ListaDeCompras::getNomeItem) 
 
 
 

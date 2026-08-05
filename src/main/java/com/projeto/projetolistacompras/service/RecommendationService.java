@@ -43,4 +43,10 @@ public class RecommendationService {
      
     }
 
+    //sugerir receitas 
+    public String sugerirReceita(String email){
+        
+    }
+
+
 }

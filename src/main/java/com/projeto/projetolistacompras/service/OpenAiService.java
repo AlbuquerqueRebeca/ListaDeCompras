@@ -1,11 +1,12 @@
 package com.projeto.projetolistacompras.service;
 
-import java.net.http.HttpHeaders;
+
 import java.util.List;
 
-import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -59,13 +60,13 @@ public class OpenAiService {
       //adicionando headers 
       HttpHeaders headers = new HttpHeaders();
       headers.setContentType(MediaType.APPLICATION_JSON); //enviando dados em formato json
-      headers.setBearerAuth(apiKey); //autenticação com a chave da api
+      headers.setBearerAuth(apikey); //autenticação com a chave da api
 
-     HttpEntity<String> request = new HttpEntity<>(body, headers);
+     HttpEntity<String> entity = new HttpEntity<>(body, headers);
 
      
      //enviando a requisiçao e trazendo resposta 
-     String retorno = restTemplate.postForObjetct(
+     String retorno = restTemplate.postForObject(
         "https://api.openai.com/v1/chat/completion",
         entity,
         String.class
@@ -77,7 +78,7 @@ public class OpenAiService {
         JsonNode root = mapper.readTree(retorno);
         String response = root.path("choices").get(0).path("message").path("content").asText();
         return response;
-       }catch(Excepetion e){
+       }catch(Exception e){  //tratamento de exceção
         e.printStackTrace();
         return "Erro ao gerar sugestão";
        }

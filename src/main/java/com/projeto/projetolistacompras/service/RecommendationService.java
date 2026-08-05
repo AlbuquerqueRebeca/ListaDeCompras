@@ -46,7 +46,13 @@ public class RecommendationService {
     //sugerir receitas 
     public String sugerirReceita(String email){
     List<ListaDeCompras> listas = listaDeComprasRepository.findByUsuarioEmail(email);
-    }
+    List<String> itens = listas.stream()
+
+
+
+
+
+}
 
 
 }

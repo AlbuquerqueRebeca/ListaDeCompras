@@ -127,5 +127,8 @@ public class ListaDeComprasController {
 	   }
 
 	   @PostMapping("/sugerir-receita-auto")
+	   public ResponseEntity<String> obterSugestaoReceita(Authentication authentication){
+		
+	   }
 
 }

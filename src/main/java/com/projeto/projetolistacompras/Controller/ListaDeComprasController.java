@@ -126,4 +126,6 @@ public class ListaDeComprasController {
 		   return ResponseEntity.ok("Listas associadas: " + qtd);
 	   }
 
+	   @PostMapping("/sugerir-receita-auto")
+
 }

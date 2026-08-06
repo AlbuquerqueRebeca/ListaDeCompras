@@ -28,6 +28,8 @@ private long id;
 private String nome; 
 private String descricao;
 
+private String nomeItem;
+
 
 
 @ManyToOne

@@ -48,8 +48,8 @@ public class RecommendationService {
     List<ListaDeCompras> listas = listaDeComprasRepository.findByUsuarioEmail(email);
     List<String> itens = listas.stream() //extraindo nome dos itens
                          .map(ListaDeCompras::getNomeItem) 
-
-
+                         .toList();
+    return openAiService.gerarSugestao(itens); //chamando o metodo da openaiservice
 
 
 

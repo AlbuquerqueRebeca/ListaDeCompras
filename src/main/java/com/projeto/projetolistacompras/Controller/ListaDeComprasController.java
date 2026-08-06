@@ -134,5 +134,11 @@ public class ListaDeComprasController {
 	   }
 
 	   @PostMapping("/assistente-interativo")
+	   public ResponseEntity<String> conversarComAssistente(Authentication authentication, @RequestBody String mensagemUsuario){
+        
+
+
+
+	   }
 
 }

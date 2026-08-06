@@ -19,12 +19,12 @@ public class RecommendationService {
 
 
 
-    public RecommendationService(ListaDeComprasRepository listaDeComprasRepository) {
+    public RecommendationService(ListaDeComprasRepository listaDeComprasRepository, OpenAiService openAiService) {
     this.listaDeComprasRepository = listaDeComprasRepository; 
     }
     //busca todas as listas
     public List<String> sugerirItens(String email) {
-        System.out.println("ENTROU NO METODO SUGERIRiTENS");  //log
+        System.out.println("ENTROU NO METODO SUGERIR ITENS");  //log
     List<ListaDeCompras> historico = listaDeComprasRepository.findByUsuarioEmail(email); 
     
       

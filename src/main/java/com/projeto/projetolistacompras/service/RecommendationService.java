@@ -21,6 +21,7 @@ public class RecommendationService {
 
     public RecommendationService(ListaDeComprasRepository listaDeComprasRepository, OpenAiService openAiService) {
     this.listaDeComprasRepository = listaDeComprasRepository; 
+    this.openAiService = openAiService;
     }
     //busca todas as listas
     public List<String> sugerirItens(String email) {

@@ -137,6 +137,7 @@ public class ListaDeComprasController {
 	   public ResponseEntity<String> conversarComAssistente(Authentication authentication, @RequestBody String mensagemUsuario){
         try{
 			String email = authentication.getName();
+			String resposta = recommendationService.conversarAsistente(email, mensagemUsuario);
 		}
 
 

@@ -130,6 +130,7 @@ public class ListaDeComprasController {
 	   public ResponseEntity<String> obterSugestaoReceita(Authentication authentication){
 		String email = authentication.getName();
 		String sugestao = recommendationService.sugerirReceita(email);
+		return ResponseEntity.ok(sugestao);
 	   }
 
 }

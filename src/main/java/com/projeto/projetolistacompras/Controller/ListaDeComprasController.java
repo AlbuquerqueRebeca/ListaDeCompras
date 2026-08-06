@@ -139,8 +139,10 @@ public class ListaDeComprasController {
 			String email = authentication.getName();
 			String resposta = recommendationService.conversarAsistente(email, mensagemUsuario);
 		    return ResponseEntity.ok(resposta);
-		
-		
+		} catch (Exception e ){
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+			                            .body("Erro ao interagir com a assistente");
 		}
 
 

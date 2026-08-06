@@ -88,7 +88,7 @@ public void setItens(List<Item> itens) {
 }
 
 public String getNomeItem(){
-	
+	return nomeItem;
 }
 
 

@@ -138,6 +138,9 @@ public class ListaDeComprasController {
         try{
 			String email = authentication.getName();
 			String resposta = recommendationService.conversarAsistente(email, mensagemUsuario);
+		    return ResponseEntity.ok(resposta);
+		
+		
 		}
 
 

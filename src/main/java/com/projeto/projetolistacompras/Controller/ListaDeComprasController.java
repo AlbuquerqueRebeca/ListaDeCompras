@@ -133,4 +133,6 @@ public class ListaDeComprasController {
 		return ResponseEntity.ok(sugestao);
 	   }
 
+	   @PostMapping("/assistente-interativo")
+
 }

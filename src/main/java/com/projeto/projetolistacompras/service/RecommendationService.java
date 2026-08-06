@@ -15,6 +15,10 @@ public class RecommendationService {
 
     private final ListaDeComprasRepository listaDeComprasRepository; 
 
+    private final OpenAiService openAiService;
+
+
+
     public RecommendationService(ListaDeComprasRepository listaDeComprasRepository) {
     this.listaDeComprasRepository = listaDeComprasRepository; 
     }
@@ -47,7 +51,7 @@ public class RecommendationService {
     public String sugerirReceita(String email){ //usando email autenticado
     List<ListaDeCompras> listas = listaDeComprasRepository.findByUsuarioEmail(email);
     List<String> itens = listas.stream() //extraindo nome dos itens
-                         .map(ListaDeCompras::getNomeItem) 
+                         .map(ListaDeCompras::getNomeItem) // CRIAR O METODO NA CLASSE LISTA DE COMPRAS
                          .toList();
     return openAiService.gerarSugestao(itens); //chamando o metodo da openaiservice
 

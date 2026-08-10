@@ -52,13 +52,14 @@ public class RecommendationService {
     public String sugerirReceita(String email){ //usando email autenticado
     List<ListaDeCompras> listas = listaDeComprasRepository.findByUsuarioEmail(email);
     List<String> itens = listas.stream() //extraindo nome dos itens
-                         .map(ListaDeCompras::getNomeItem) // CRIAR O METODO NA CLASSE LISTA DE COMPRAS
+                         .map(ListaDeCompras::getNomeItem) 
                          .toList();
     return openAiService.gerarSugestao(itens); //chamando o metodo da openaiservice
 
-
-
 }
+
+  
+    public String conversarAssistente()
 
 
 }

@@ -59,7 +59,9 @@ public class RecommendationService {
 }
 
   
-    public String conversarAssistente()
+    public String conversarAssistente(String email, String mensagemUsuario){
+        
+    }
 
 
 }

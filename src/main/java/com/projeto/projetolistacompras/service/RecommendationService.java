@@ -60,7 +60,8 @@ public class RecommendationService {
 
   
     public String conversarAssistente(String email, String mensagemUsuario){
-        
+     List<ListaDeCompras> listas = listaDeComprasRepository.findByUsuarioEmail(email);
+     
     }
 
 

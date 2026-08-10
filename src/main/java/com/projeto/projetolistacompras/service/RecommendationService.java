@@ -61,7 +61,9 @@ public class RecommendationService {
   
     public String conversarAssistente(String email, String mensagemUsuario){
      List<ListaDeCompras> listas = listaDeComprasRepository.findByUsuarioEmail(email);
-     
+     List<String> itens = listas.stream()
+                          .map(ListaDeCompras::getNomeItem)
+                          .collect(Collectors.toList());
     }
 
 

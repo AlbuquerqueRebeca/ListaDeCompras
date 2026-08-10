@@ -64,6 +64,9 @@ public class RecommendationService {
      List<String> itens = listas.stream()
                           .map(ListaDeCompras::getNomeItem)
                           .collect(Collectors.toList());
+
+        return openAiService.gerarSugestao(itens);
+
     }
 
 

@@ -126,18 +126,23 @@ public class ListaDeComprasController {
 		   return ResponseEntity.ok("Listas associadas: " + qtd);
 	   }
 
-	   @PostMapping("/sugerir-receita-auto")
-	   public ResponseEntity<String> obterSugestaoReceita(Authentication authentication){
-		String email = authentication.getName();
-		String sugestao = recommendationService.sugerirReceita(email);
-		return ResponseEntity.ok(sugestao);
+	   @GetMapping("/sugerir-receita-auto")
+	 //  public ResponseEntity<String> obterSugestaoReceita(Authentication authentication){
+	//	System.out.println(">>> Entrou no endpoint /sugerir-receita-auto");
+      //  System.out.println(">>> Authentication: " + authentication);
+		
+	//	String email = authentication.getName();
+	//	String sugestao = recommendationService.sugerirReceita(email);
+	//	return ResponseEntity.ok(sugestao);
+	  public String teste(){
+		return "FUNCIONOU!!!!!!!!!!!!!!!!!!!!!!!!";
 	   }
 
 	   @PostMapping("/assistente-interativo")
 	   public ResponseEntity<String> conversarComAssistente(Authentication authentication, @RequestBody String mensagemUsuario){
         try{
 			String email = authentication.getName();
-			String resposta = recommendationService.conversarAsistente(email, mensagemUsuario);
+			String resposta = recommendationService.conversarAssistente(email, mensagemUsuario);
 		    return ResponseEntity.ok(resposta);
 		} catch (Exception e ){
 			e.printStackTrace();

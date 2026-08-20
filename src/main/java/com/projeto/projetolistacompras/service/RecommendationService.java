@@ -65,7 +65,7 @@ public class RecommendationService {
                           .map(ListaDeCompras::getNomeItem)
                           .collect(Collectors.toList());
 
-        return openAiService.gerarSugestao(itens);
+        return openAiService.gerarSugestao(itens); //chamando o metodo da openaiservice
 
     }
 

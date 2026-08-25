@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+
 @Service
 public class OpenAiService {
 
@@ -45,8 +46,8 @@ public class OpenAiService {
         //corpo da requisição
         String  body = """ 
         {
-        "model": "gpt-40-,mini",
-         "messagens":[
+        "model": "gpt-4o-mini",
+         "messages":[
          {
            "role": "system", "content": "Você é um assitente de compras inteligente." },
          {
@@ -67,7 +68,7 @@ public class OpenAiService {
      
      //enviando a requisiçao e trazendo resposta 
      String retorno = restTemplate.postForObject(
-        "https://api.openai.com/v1/chat/completion",
+        "https://api.openai.com/v1/chat/completions",
         entity,
         String.class
      );

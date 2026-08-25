@@ -127,15 +127,14 @@ public class ListaDeComprasController {
 	   }
 
 	   @GetMapping("/sugerir-receita-auto")
-	 //  public ResponseEntity<String> obterSugestaoReceita(Authentication authentication){
-	//	System.out.println(">>> Entrou no endpoint /sugerir-receita-auto");
-      //  System.out.println(">>> Authentication: " + authentication);
-		
-	//	String email = authentication.getName();
-	//	String sugestao = recommendationService.sugerirReceita(email);
-	//	return ResponseEntity.ok(sugestao);
-	  public String teste(){
-		return "FUNCIONOU!!!!!!!!!!!!!!!!!!!!!!!!";
+	   public ResponseEntity<String> sugerirReceitaAutomatica(Authentication authentication){
+		System.out.println("Sugerindo receita automática...");
+		String email = authentication.getName();
+		System.out.println("EMAIL EXTRAIDO DO TOKEN:");
+		String sugestao = recommendationService.sugerirReceita(email);
+		System.out.println("SUGESTAO GERADA");
+
+		return ResponseEntity.ok(sugestao);
 	   }
 
 	   @PostMapping("/assistente-interativo")

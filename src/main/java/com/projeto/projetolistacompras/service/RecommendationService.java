@@ -52,7 +52,7 @@ public class RecommendationService {
     //sugerir receitas 
     public List<String> sugerirReceita(String email){ //usando email autenticado
     
-    String respostaAi = openAiService.gerarSugestao(email);
+    String respostaAi = openAiService.sugerirReceita(email);
     List<String> sugestoes = Arrays.stream(respostaAi.split("\n")) //extraindo nome dos itens
                          .map(String::trim) //
                          .filter(s -> !s.isBlank()) //

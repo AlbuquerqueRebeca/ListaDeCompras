@@ -8,6 +8,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -72,13 +73,17 @@ public class OpenAiService {
         entity,
         String.class
      );
-     
+     System.out.println("RETORNO DA OPEN AI" + retorno);
      //extraindo texto da resposta
      try{
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.readTree(retorno);
         String response = root.path("choices").get(0).path("message").path("content").asText();
         return response;
+       }catch (HttpStatusCodeException e) {
+        System.out.println("ERRO HTTP: " + e.getStatusCode());  //log
+        System.out.println("CORPO DO ERRO: " + e.getResponseBodyAsString()); //log
+        return "Erro ao gerar sugestão: " + e.getStatusCode();  //log
        }catch(Exception e){  //tratamento de exceção
         e.printStackTrace();
         return "Erro ao gerar sugestão";

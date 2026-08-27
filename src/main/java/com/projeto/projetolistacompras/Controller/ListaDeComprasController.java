@@ -127,11 +127,11 @@ public class ListaDeComprasController {
 	   }
 
 	   @GetMapping("/sugerir-receita-auto")
-	   public ResponseEntity<String> sugerirReceitaAutomatica(Authentication authentication){
-		System.out.println("Sugerindo receita automática...");
+	   public ResponseEntity<List<String>> sugerirReceitaAutomatica(Authentication authentication){
+		
 		String email = authentication.getName();
-		System.out.println("EMAIL EXTRAIDO DO TOKEN:");
-		String sugestao = recommendationService.sugerirReceita(email);
+	    List<String> sugestao = recommendationService.sugerirReceita(email);
+		// String sugestao = recommendationService.sugerirReceita(email);
 		System.out.println("SUGESTAO GERADA");
 
 		return ResponseEntity.ok(sugestao);

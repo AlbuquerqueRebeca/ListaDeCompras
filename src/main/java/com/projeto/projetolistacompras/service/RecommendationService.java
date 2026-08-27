@@ -1,5 +1,6 @@
 package com.projeto.projetolistacompras.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -52,10 +53,13 @@ public class RecommendationService {
     public List<String> sugerirReceita(String email){ //usando email autenticado
     
     String respostaAi = openAiService.gerarSugestao(email);
-    List<String> itens = listas.stream() //extraindo nome dos itens
-                         .map(ListaDeCompras::getNomeItem) 
-                         .toList();
-    return openAiService.gerarSugestao(itens); //chamando o metodo da openaiservice
+    List<String> sugestoes = Arrays.stream(respostaAi.split("\n")) //extraindo nome dos itens
+                         .map(String::trim) //
+                         .filter(s -> !s.isBlank()) //
+                         .collect(Collectors.toList());//coletando em uma lista
+
+                         return sugestoes;
+    
 
 }
 

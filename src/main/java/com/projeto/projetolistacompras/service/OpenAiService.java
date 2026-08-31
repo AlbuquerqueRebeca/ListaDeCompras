@@ -1,8 +1,6 @@
 package com.projeto.projetolistacompras.service;
 
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -27,10 +25,9 @@ public class OpenAiService {
         this.restTemplate = restTemplate; 
     }
 
+       
+    
        public String gerarSugestao(List<String> itens){
-
-
-
         //prompet
         String prompt = """
         Você é um assitente de compras inteligente.
@@ -43,7 +40,7 @@ public class OpenAiService {
                
                      """.formatted(String.join(", ", itens));
 
-
+       
         //corpo da requisição
         String  body = """ 
         {
@@ -89,10 +86,11 @@ public class OpenAiService {
         return "Erro ao gerar sugestão";
        }
 
+ }  
+ 
+ public String sugerirReceita(String email){ //
 
-
-   
-       }
+ }
 
 
 

@@ -89,8 +89,8 @@ public class OpenAiService {
  }  
  
  public String sugerirReceita(String email){ //
- List<String itensDoUsuario = buscarItensDoUsuario(email); //buscando itens de usuario pelo email
- 
+ List<String> itensDoUsuario = buscarItensDoUsuario(email); //buscando itens de usuario pelo email
+    return gerarSugestao(itensDoUsuario); 
  }
 
 

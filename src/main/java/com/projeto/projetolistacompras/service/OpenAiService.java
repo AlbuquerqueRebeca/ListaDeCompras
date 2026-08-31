@@ -93,7 +93,10 @@ public class OpenAiService {
     return gerarSugestao(itensDoUsuario); 
  }
 
+  private List<String> buscarItensDoUsuario(String email) { //
+    return List.of("arroz", "feijão", "frango", "batata");//retornando itens de exemplo 
 
+  }
 
 
 }

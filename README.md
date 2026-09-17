@@ -12,12 +12,13 @@ As informações são armazenadas em nuvem utilizando Supabase, e a aplicação 
 
 ----------------------------------------------------------------------------------------------
 #### Funcionalidades 
-- Cadastro de usuários (nome, e-mail, senha).
+- Cadastro de usuários (nome, e-mail e senha).
 - Criação, edição e exclusão de listas de compras.
 - Reutilização de listas anteriores.
 - Visualização de listas atuais e antigas.
-- Sugestões inteligentes de produtos mais frequentes 
-- Sincronização com armazenamento em nuvem.
+- Sugestões de produtos comprados com maior frequência.
+- Sugestão de receitas com base nos produtos presentes na lista de compras.
+- Sugestão interativa de receitas a partir de ingredientes informados pelo usuário.
 
 ------------------------------------------------------------------------------------------------------------
 

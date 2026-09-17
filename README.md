@@ -4,8 +4,11 @@
 -----------------------------------------------
 
 #### Introdução
-Este sistema foi desenvolvido para facilitar o gerenciamento de listas de compras, permitindo que usuários cadastrem contas, criem e editem listas, reutilizem listas anteriores e recebam sugestões inteligentes de produtos mais frequentes. 
-Todas as informações são armazenadas na nuvem via Railway, garantindo segurança dos dados.
+Este sistema foi desenvolvido para facilitar o gerenciamento de listas de compras, permitindo que usuários cadastrem contas, criem e editem listas, reutilizem listas anteriores e recebam sugestões inteligentes de produtos que costumam comprar com frequência.
+
+A aplicação também conta com recursos de Inteligência Artificial Generativa, permitindo sugerir receitas com base nos produtos presentes nas listas e, de forma interativa, gerar sugestões a partir de ingredientes informados pelo usuário.
+
+As informações são armazenadas em nuvem utilizando Supabase, e a aplicação possui autenticação e controle de acesso para proteger os recursos de cada usuário.
 
 ----------------------------------------------------------------------------------------------
 #### Funcionalidades 

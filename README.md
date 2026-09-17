@@ -24,13 +24,18 @@ As informações são armazenadas em nuvem utilizando Supabase, e a aplicação 
 
 #### Tecnologias Utilizadas
 - Java 17
-- Spring Framework (Web, Data JPA, Security)
-- Banco de Dados SQL (PostegreSQL)
-- Swagger (Documentação da API)
-- Railway (Hospedagem e deploy)
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Spring Security
+- PostgreSQL
+- Supabase (Banco de dados e armazenamento em nuvem)
+- Swagger / OpenAPI (Documentação da API)
 - Gradle (Gerenciador de dependências)
-- Junit + Mockito (Teste de integração)
-- Inteligência Artificial (sugestões de produtos)
+- JUnit + Mockito (Testes unitários)
+- Postman (Testes e validação das APIs)
+- Git e GitHub (Controle de versão)
+- OpenAI / Inteligência Artificial Generativa (Sugestões de receitas)
 
 --------------------------------------------------------------------------------------------------------------
 
@@ -40,7 +45,7 @@ As informações são armazenadas em nuvem utilizando Supabase, e a aplicação 
 - Posteman -> para testar as rotas da API
 - Git -> para versionamento e controle de código
 - Github -> hospedagem de código 
-- Raiway -> para gerenciar o deploy e banco de dados na nuvem
+- Supabase -> para gerenciar o deploy e banco de dados na nuvem
 
 --------------------------------------------------------------------------------------------------------------
 
